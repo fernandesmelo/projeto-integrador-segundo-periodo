@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão SENAC Recife</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <main class="login-card">
+        <img src="./assets/images/logosenac.png" alt="Imagem de Login" class="login-image">
+        <h1>Entre para iniciar sua sessão</h1>
+        <form id="login-form">
+            <section class="input-group">
+                <label for="user-type">Tipo de Usuário</label>
+                <select id="user-type" name="user-type" required class="input-field">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Cliente">Cliente</option>
+                    <option value="Funcionário">Funcionário</option>
+                </select>
+            </section>
+            <section>
+              <div class="input-group">
+                  <label for="username">Usuário</label>
+                  <input type="text" id="username" name="username" required>
+              </div>
+              <div class="input-group">
+                  <label for="password">Senha</label>
+                  <input type="password" id="password" name="password" required>
+              </div>
+            </section>
+            <button type="submit">Entrar</button>
+            <p class="signup-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </form>
+    </main>
+    <script src="./typescript/index.ts"></script>
+</body>
+</html>
