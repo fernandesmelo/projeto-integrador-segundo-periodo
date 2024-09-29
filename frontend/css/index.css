@@ -28,7 +28,7 @@ body {
 }
 
 .input-field {
-    width: 99%;
+    width: 99.5%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -83,10 +83,18 @@ button:hover {
     background-color: #e58e1d;
 }
 
-.signup-link {
+.reset {
+    display: block;
     margin-top: 20px;
+    color: #e58e1d;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.signup-link {
     font-size: 14px;
     color: #333;
+    display: inline;
 }
 
 .signup-link a {
