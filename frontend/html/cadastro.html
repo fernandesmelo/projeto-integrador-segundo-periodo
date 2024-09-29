@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salão de Beleza Senac</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <div class="cadastro-card">
+    <img src="assets/senaclogo.png" alt="Logo Senac" class="cadastro-image">
+    <h1>Cadastro - Salão Empresa Pedagógica</h1>
+    <form id="cadastro-form">
+      <div class="input-group">
+        <label for="name">Nome Completo</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="input-group">
+        <label for="dob">Data de Nascimento</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Criar Senha</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="input-group">
+        <label>É aluno Senac?</label>
+        <div>
+          <input type="radio" id="aluno-sim" name="aluno-senac" value="sim" onclick="toggleMatriculaField()" required>
+          <label for="aluno-sim">Sim</label>
+        </div>
+        <div>
+          <input type="radio" id="aluno-nao" name="aluno-senac" value="nao" onclick="toggleMatriculaField()" required>
+          <label for="aluno-nao">Não</label>
+        </div>
+      </div>
+      <div class="input-group" id="matricula-group" style="display: none;">
+        <label for="matricula">Insira sua matrícula</label>
+        <input type="text" id="matricula" name="matricula">
+      </div>
+      <button type="submit">Cadastrar</button>
+      <p class="login-link">Já tem uma conta? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+  <script>
+    function toggleMatriculaField() {
+      const matriculaGroup = document.getElementById('matricula-group');
+      const alunoSimChecked = document.getElementById('aluno-sim').checked;
+
+      // Mostra o campo de matrícula apenas se "Sim" estiver marcado
+      matriculaGroup.style.display = alunoSimChecked ? 'block' : 'none';
+    }
+
+    document.getElementById('cadastro-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const dob = document.getElementById('dob').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const alunoSenac = document.querySelector('input[name="aluno-senac"]:checked').value;
+      const matricula = document.getElementById('matricula').value;
+
+      // Validação
+      if (name === '' || email === '' || password === '' || dob === '') {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+      } else {
+        alert(`Cadastro realizado com sucesso!\nNome: ${name}\nData de Nascimento: ${dob}\nE-mail: ${email}\nAluno Senac: ${alunoSenac}${alunoSenac === "sim" ? `\nMatrícula: ${matricula}` : ''}`);
+        // Aqui você pode redirecionar para outra página ou processar os dados
+      }
+    });
+  </script>
+</body>
+</html>

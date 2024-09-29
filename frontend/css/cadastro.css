@@ -1,0 +1,91 @@
+    /* Estilo básico para o body */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Card de cadastro centralizado */
+    .cadastro-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+    }
+
+    /* Estilo do título */
+    .cadastro-card h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #e58e1d;
+    }
+
+    /* Estilo do botão de cadastro */
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #e58e1d;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d68c16;
+    }
+
+    /* Estilo do link de login */
+    .login-link {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .login-link a {
+      color: #e58e1d;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    .cadastro-image {
+      display: block;
+      margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
+      width: 100px; /* Ajusta o tamanho da imagem */
+    }
