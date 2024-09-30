@@ -51,13 +51,13 @@
         </div>
         <div class="input-group">
           <label>É aluno Senac?</label>
-          <div>
-            <input type="radio" id="aluno-sim" name="aluno-senac" value="sim" onclick="toggleMatriculaField()" required>
+          <div class="radio-input">
             <label for="aluno-sim">Sim</label>
+            <input type="radio" id="aluno-sim" name="aluno-senac" value="sim" onclick="toggleMatriculaField()" required>
           </div>
-          <div>
-            <input type="radio" id="aluno-nao" name="aluno-senac" value="nao" onclick="toggleMatriculaField()" required>
+          <div class="radio-input">
             <label for="aluno-nao">Não</label>
+            <input type="radio" id="aluno-nao" name="aluno-senac" value="nao" onclick="toggleMatriculaField()" required>
           </div>
         </div>
         <div class="input-group" id="matricula-group" style="display: none;">
@@ -65,7 +65,7 @@
           <input type="text" id="matricula" name="matricula">
         </div>
         <button type="submit">Cadastrar</button>
-        <p class="login-link">Já tem uma conta? <a href="login.html">Login</a></p>
+        <p class="login-link">Já tem uma conta? <a href="../">Login</a></p>
       </form>
     </div>
     <div class="cadastro-image-container">
