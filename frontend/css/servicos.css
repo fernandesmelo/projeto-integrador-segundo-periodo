@@ -1,0 +1,159 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para o carrossel */
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.category {
+  margin-bottom: 40px;
+}
+
+.subcategory {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.subcategory li {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex; /* Para alinhar os elementos em linha */
+  justify-content: space-between; /* Espaçar o texto dos botões */
+  align-items: center; /* Centralizar verticalmente os botões */
+}
+
+.subcategory li:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Estilo para o botão das categorias */
+button.category-btn {
+  background-color: #F39C21; /* Cor de fundo */
+  color: #ffffff; /* Cor do texto */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%; /* Para que o botão ocupe toda a largura do container */
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button.category-btn:hover {
+  background-color: #e58e1d; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o dropdown */
+.category-content {
+  display: none; /* Esconde o conteúdo inicialmente */
+  padding-left: 20px;
+}
+
+.show {
+  display: block; /* Mostra o conteúdo quando o dropdown está ativado */
+}
+
+.arrow {
+  float: right; /* Coloca a seta à direita */
+  font-size: 20px;
+}
+
+.preco {
+  font-weight: bold;
+  color: #e58e1d; /* cor dos preços */
+  margin-left: 5px; /* espaçamento à esquerda do preço */
+}
+
+/* Botões de adicionar e remover */
+.add-button,
+.remove-button {
+  background-color: #0051A0; /* cor do botão + */
+  color: white; /* cor do texto */
+  border: none; /* sem borda */
+  border-radius: 5px; /* bordas arredondadas */
+  padding: 5px 10px; /* espaçamento interno */
+  cursor: pointer; /* cursor em forma de mão ao passar o mouse */
+  transition: background-color 0.3s ease; /* transição suave */
+  margin-left: 5px; /* Margem para espaçar os botões */
+}
+
+.add-button:hover {
+  background-color: #003f80; /* cor do botão ao passar o mouse */
+}
+
+.remove-button {
+  background-color: #dc3545; /* cor do botão - */
+}
+
+.remove-button:hover {
+  background-color: #c82333; /* cor do botão ao passar o mouse */
+}
+
+.total-section {
+  margin-top: 20px;
+  padding: 15px; /* Padding interno */
+  background-color: #f8f9fa; /* Fundo claro para a seção de totais */
+  border: 1px solid #0051A0; /* Borda do total */
+  border-radius: 10px; /* Borda arredondada */
+  text-align: center; /* Centralizando o texto */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.total-services {
+  font-size: 1.5em; /* Aumentando o tamanho da fonte */
+  font-weight: bold;
+  margin: 10px 0; /* Margem entre os totais */
+}
+
+.btn-agendar {
+  margin-top: 20px;
+  background-color: #28a745; /* Verde para o botão */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agendar:hover {
+  background-color: #218838; /* Tom mais escuro ao passar o mouse */
+}
+
+.btn-cancelar {
+  margin-top: 20px;
+  background-color: #dc3545; /* Vermelho para o botão */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin-left: 10px; /* Espaço entre os botões */
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+  background-color: #c82333; /* Tom mais escuro ao passar o mouse */
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #0051A0; /* Cor do título */
+}
+
+.text-center {
+  margin-bottom: 20px;
+}
