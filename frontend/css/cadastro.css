@@ -1,22 +1,19 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f3f4f6;
+  background-color: #ffffff;
   margin: 0;
-  /* overflow-x: hidden;  */
 }
 
 .cadastro-container {
   display: flex;
   justify-content: space-between;
-  height: 100vh; /* Ocupar a altura total da tela */
+  height: 100vh; 
   margin: 0;
 }
 
 .cadastro-card {
-  width: 57%; /* Ocupar 60% da largura para o formulário */
+  width: 57%; 
   padding: 20px;
-  overflow-y: auto; /* Permitir rolagem apenas no formulário */
-  /* max-height: 100vh;  */
   background-color: #ffffff;
 }
 
@@ -81,11 +78,11 @@ button:hover {
 }
 
 .cadastro-image-container {
-  width: 40%; /* A imagem ocupará 40% da tela */
-  position: fixed; /* Fixar a imagem no lado direito */
+  width: 40%; 
+  position: fixed; 
   top: 0;
   right: 0;
-  height: 100%; /* A imagem ocupará toda a altura da tela */
+  height: 100%; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +95,7 @@ button:hover {
 }
 
 .input-group input {
-  width: 100%;
+  width: 97%;
   display: block;
 }
 
@@ -113,4 +110,5 @@ button:hover {
   margin-bottom: 10px;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
