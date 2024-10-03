@@ -5,7 +5,6 @@ body {
   padding: 0;
 }
 
-/* Estilo para o carrossel */
 .carousel-inner img {
   height: 400px;
   object-fit: cover;
@@ -27,9 +26,9 @@ body {
   margin-bottom: 5px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex; /* Para alinhar os elementos em linha */
-  justify-content: space-between; /* Espaçar o texto dos botões */
-  align-items: center; /* Centralizar verticalmente os botões */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .subcategory li:hover {
@@ -37,88 +36,85 @@ body {
   cursor: pointer;
 }
 
-/* Estilo para o botão das categorias */
 button.category-btn {
-  background-color: #F39C21; /* Cor de fundo */
-  color: #ffffff; /* Cor do texto */
+  background-color: #F39C21;
+  color: #ffffff;
   padding: 10px;
   border: none;
   border-radius: 5px;
-  width: 100%; /* Para que o botão ocupe toda a largura do container */
+  width: 100%;
   text-align: left;
   font-size: 18px;
   cursor: pointer;
 }
 
 button.category-btn:hover {
-  background-color: #e58e1d; /* Cor de fundo ao passar o mouse */
+  background-color: #e58e1d;
 }
 
-/* Estilo para o dropdown */
 .category-content {
-  display: none; /* Esconde o conteúdo inicialmente */
+  display: none;
   padding-left: 20px;
 }
 
 .show {
-  display: block; /* Mostra o conteúdo quando o dropdown está ativado */
+  display: block;
 }
 
 .arrow {
-  float: right; /* Coloca a seta à direita */
+  float: right;
   font-size: 20px;
 }
 
 .preco {
   font-weight: bold;
-  color: #e58e1d; /* cor dos preços */
-  margin-left: 5px; /* espaçamento à esquerda do preço */
+  color: #e58e1d;
+  margin-left: 5px;
 }
 
-/* Botões de adicionar e remover */
 .add-button,
 .remove-button {
-  background-color: #0051A0; /* cor do botão + */
-  color: white; /* cor do texto */
-  border: none; /* sem borda */
-  border-radius: 5px; /* bordas arredondadas */
-  padding: 5px 10px; /* espaçamento interno */
-  cursor: pointer; /* cursor em forma de mão ao passar o mouse */
-  transition: background-color 0.3s ease; /* transição suave */
-  margin-left: 5px; /* Margem para espaçar os botões */
+  background-color: #0051A0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 5px;
 }
 
 .add-button:hover {
-  background-color: #003f80; /* cor do botão ao passar o mouse */
+  background-color: #003f80;
 }
 
 .remove-button {
-  background-color: #dc3545; /* cor do botão - */
+  background-color: #dc3545;
 }
 
 .remove-button:hover {
-  background-color: #c82333; /* cor do botão ao passar o mouse */
+  background-color: #c82333;
 }
 
 .total-section {
   margin-top: 20px;
-  padding: 15px; /* Padding interno */
-  background-color: #f8f9fa; /* Fundo claro para a seção de totais */
-  border: 1px solid #0051A0; /* Borda do total */
-  border-radius: 10px; /* Borda arredondada */
-  text-align: center; /* Centralizando o texto */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #0051A0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .total-services {
-  font-size: 1.5em; /* Aumentando o tamanho da fonte */
+  font-size: 1.5em;
   font-weight: bold;
-  margin: 10px 0; /* Margem entre os totais */
+  margin: 10px 0;
 }
 
 .btn-agendar {
   margin-top: 20px;
-  background-color: #28a745; /* Verde para o botão */
+  background-color: #0051A0;
   color: white;
   border: none;
   border-radius: 5px;
@@ -128,30 +124,36 @@ button.category-btn:hover {
 }
 
 .btn-agendar:hover {
-  background-color: #218838; /* Tom mais escuro ao passar o mouse */
+  background-color: #0051A0;
+  color: white;
+}
+
+.btn-agendar a {
+  text-decoration: none;
+  color: white;
 }
 
 .btn-cancelar {
   margin-top: 20px;
-  background-color: #dc3545; /* Vermelho para o botão */
+  background-color: #dc3545;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 1.2em;
-  margin-left: 10px; /* Espaço entre os botões */
+  margin-left: 10px;
   transition: background-color 0.3s ease;
 }
 
 .btn-cancelar:hover {
-  background-color: #c82333; /* Tom mais escuro ao passar o mouse */
+  background-color: #c82333;
 }
 
 .titulo {
   text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
-  color: #0051A0; /* Cor do título */
+  color: #0051A0;
 }
 
 .text-center {

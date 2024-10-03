@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.min.css"
+        media="print" />
+    <link rel="stylesheet" href="../css/agendamentos.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <h2>Calendário de Agendamento</h2>
+        <div id="calendar"></div>
+        <div class="available-times" id="available-times" style="display: none;">
+            <h2>Horários Disponíveis</h2>
+            <div id="times-list"></div>
+        </div>
+        <div class="professional-card" id="professional-info">
+            <h2>Profissional Responsável</h2>
+            <div class="professional-info">
+                <img src="assets/foto profissional.png" alt="Imagem do Profissional João Silva"
+                    class="professional-image">
+                <div>
+                    <p><strong>Nome:</strong> <span id="professional-name">João Silva</span></p>
+                    <p><strong>Especialidade:</strong> <span id="professional-specialty">Esteticista</span></p>
+                    <p><strong>Preço:</strong> R$ <span id="professional-price">80,00</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="summary" id="summary" style="display: none;">
+            <h2>Resumo do Agendamento</h2>
+            <p><strong>Data:</strong> <span id="summary-date"></span></p>
+            <p><strong>Horário:</strong> <span id="summary-time"></span></p>
+        </div>
+        <div class="action-buttons">
+            <button id="finalize-button" class="confirm-button" style="display: none;">Concluir Agendamento</button>
+            <button id="cancel-button" class="cancel-button"
+                onclick="window.location.href='./confirmacaoagendamento.html'">Cancelar</button>
+        </div>
+    </div>
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Adicionar Evento</h2>
+            <label for="eventTitle">Título do Evento:</label>
+            <input type="text" id="eventTitle" placeholder="Digite o título do evento" aria-label="Título do Evento">
+            <button id="addEventButton">Adicionar Evento</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/lang/pt-br.js"></script>
+    <script src="../javascript/agendamentos.js"></script>
+</body>
+</html>
