@@ -39,15 +39,21 @@
     </a>
   </div>
   <div class="container mt-5">
-    <h2 class="titulo">Agendar Serviços</h2>
-    <div id="servicos-container"></div>
-    <div id="total-section">
-      <h3>Total: R$ <span id="total-value">0,00</span></h3>
-      <ul id="services-list"></ul>
-    </div>
-    <div class="text-center">
-      <button class="btn-agendar"><a href="agendamentos.html">Agendar</a></button>
-      <button class="btn-cancelar" onclick="cancelarAgendamento()">Cancelar</button>
+    <h2 class="titulo">Selecione os serviços</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <div id="servicos-container"></div>
+      </div>
+      <div class="col-md-4">
+        <div id="total-section" class="total-section">
+          <h3>Total: R$ <span id="total-value">0,00</span></h3>
+          <ul id="services-list"></ul>
+          <div class="buttons-container">
+            <button class="btn-agendar"><a href="agendamentos.html">Agendar</a></button>
+            <button class="btn-cancelar" onclick="cancelarAgendamento()">Cancelar</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -56,3 +62,5 @@
   <script src="../javascript/servicos.js"></script>
 </body>
 </html>
+
+
