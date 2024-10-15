@@ -8,11 +8,11 @@ body {
   display: flex;
   justify-content: space-between;
   height: 100vh; 
-  margin: 0;
+  margin: 0 0 0 10%;
 }
 
 .cadastro-card {
-  width: 57%; 
+  width: 40%; 
   padding: 20px;
   background-color: #ffffff;
 }
@@ -62,7 +62,7 @@ button:hover {
 }
 
 .login-link {
-  margin-top: 20px;
+  margin: 20px 0 36px 0;
   font-size: 14px;
   color: #333;
   text-align: center;
@@ -108,7 +108,10 @@ button:hover {
   display: flex;
   gap: 20px;
   margin-bottom: 10px;
-  justify-content: center;
-  align-items: center;
   margin-top: 10px;
+}
+
+#aluno-sim, 
+#aluno-nao {
+  width: 20px;
 }

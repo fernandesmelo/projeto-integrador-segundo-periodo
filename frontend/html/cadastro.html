@@ -11,7 +11,7 @@
 <body>
   <div class="cadastro-container">
     <div class="cadastro-card">
-      <h1>Cadastre-se para iniciar sua sessão</h1>
+      <h1>Cadastre-se para utilizar nossos serviços</h1>
       <form id="cadastro-form">
         <div class="input-group">
           <label for="name">Nome Completo</label>
@@ -62,7 +62,7 @@
         </div>
         <div class="input-group" id="matricula-group" style="display: none;">
           <label for="matricula">Insira sua matrícula</label>
-          <input type="text" id="matricula" name="matricula">
+          <input type="text" id="matricula" name="matricula" pattern="\d*" title="Apenas números são permitidos">
         </div>
         <button type="submit">Cadastrar</button>
         <p class="login-link">Já tem uma conta? <a href="../index.html">Login</a></p>
