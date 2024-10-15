@@ -1,0 +1,109 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #343a40;
+      color: white;
+      position: fixed;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .sidebar ul li a:hover {
+      color: #f8f9fa;
+    }
+
+    .content {
+      margin-left: 270px; /* Espaço para a sidebar */
+      padding: 20px;
+    }
+
+    .content header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .welcome-text {
+      font-size: 24px;
+    }
+
+    .card {
+      margin-bottom: 20px;
+      border: 1px solid #e3e6f0;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      min-height: 200px; /* Altura mínima para os cards */
+    }
+
+    .card .card-header {
+      background-color: #f8f9fa;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    .card .card-body {
+      padding: 20px;
+      flex-grow: 1; /* Permite que o card cresça para acomodar o conteúdo */
+    }
+
+    .btn-action {
+      background-color: #ff7f50;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-top: 15px; /* Espaçamento acima do botão */
+    }
+
+    .btn-action:hover {
+      background-color: #e5673d;
+    }
+
+    .btn-secondary-action {
+      background-color: #6c757d;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .btn-secondary-action:hover {
+      background-color: #5a6268;
+    }
+
+    /* Hover effects for sidebar items */
+    .sidebar ul li:hover {
+      background-color: #495057;
+      border-radius: 5px;
+    }
