@@ -104,8 +104,8 @@ button.category-btn:hover {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky; /* Torna o container "Total" fixo */
-  top: 20px; /* A distância do topo da tela */
+  position: sticky; 
+  top: 20px; 
 }
 
 .titulo {
@@ -124,14 +124,14 @@ button.category-btn:hover {
 .btn-agendar,
 .btn-cancelar {
   background-color: #0051A0;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   flex: 1;
-  margin-right: 10px; /* Espaço entre os botões */
+  margin-right: 10px; 
   text-decoration: none;
   text-align: center;
 }
@@ -140,24 +140,32 @@ button.category-btn:hover {
   background-color: #003f80;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .btn-cancelar {
   background-color: #dc3545;
-  margin-right: 0; /* Remove a margem à direita do último botão */
+  margin-right: 0; 
 }
 
 .btn-cancelar:hover {
   background-color: #c82333;
 }
 
-/* CSS Adicional */
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
 
 #servicos-container {
-  max-height: 600px; /* Defina a altura máxima para o container de serviços */
-  overflow-y: auto; /* Habilite a rolagem vertical */
+  max-height: 600px; 
+  overflow-y: auto; 
 }
 
 #services-list {
-  text-align: left; /* Alinha o texto à esquerda */
+  text-align: left; 
   padding-left: 0;
 }
 
@@ -165,9 +173,9 @@ button.category-btn:hover {
   list-style-type: none;
   padding: 5px 0;
   display: flex;
-  justify-content: space-between; /* Distribui o nome do serviço e o valor */
+  justify-content: space-between; 
   align-items: center;
-  border-bottom: 1px solid #e0e0e0; /* Linha de separação opcional */
+  border-bottom: 1px solid #e0e0e0; 
 }
 
 #services-list li span {
