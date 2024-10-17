@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/cadastro.css"> <!-- Link para o arquivo CSS separado -->
 </head>
 <body>
 
@@ -24,12 +24,18 @@
 
     <!-- Conteúdo principal -->
     <div class="content">
-        <h2>Cadastro de Clientes</h2>
+        <h2 class="titulo">Cadastro de Clientes</h2>
 
         <!-- Formulário de Cadastro -->
-        <form>
-            <div class="profile-picture">
-                <img src="https://via.placeholder.com/100" alt="Foto do Cliente" id="profilePic">
+        <form enctype="multipart/form-data">
+            <div class="row align-items-center mb-4">
+                <div class="col-md-2">
+                    <img src="/imagemcliente.jpg" alt="Foto do Cliente" id="profilePic" class="img-fluid">
+                </div>
+                <div class="col-md-10">
+                    <h4>Nome do Cliente</h4>
+                    <input type="file" id="uploadFoto" name="fotoCliente" class="form-control mt-3"> <!-- Upload de foto opcional -->
+                </div>
             </div>
 
             <div class="form-group">
@@ -89,6 +95,12 @@
                 </div>
             </div>
 
+            <!-- Campo de Matrícula oculto inicialmente -->
+            <div class="form-group" id="matriculaField" style="display: none;">
+                <label for="matricula">Número da Matrícula</label>
+                <input type="text" class="form-control" id="matricula" placeholder="Informe sua matrícula">
+            </div>
+
             <button type="submit" class="btn-submit">Cadastrar</button>
         </form>
     </div>
@@ -96,5 +108,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script para exibir o campo de matrícula -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const alunoSim = document.getElementById('alunoSim');
+            const alunoNao = document.getElementById('alunoNao');
+            const matriculaField = document.getElementById('matriculaField');
+
+            alunoSim.addEventListener('click', function () {
+                matriculaField.style.display = 'block';
+            });
+
+            alunoNao.addEventListener('click', function () {
+                matriculaField.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
