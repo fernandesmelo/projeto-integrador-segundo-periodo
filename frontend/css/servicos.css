@@ -5,6 +5,52 @@ body {
   padding: 0;
 }
 
+.navbar {
+  background-color: rgba(255, 255, 255, 0.6); 
+  position: fixed; 
+  width: 100%; 
+  z-index: 1000; 
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: black; 
+  font-weight: bold; 
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: #0056b3; 
+}
+
+.navbar .dropdown-item {
+  color: black; 
+  font-weight: bold; 
+}
+
+.navbar .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+.navbar .ml-auto {
+  display: flex; 
+  align-items: center; 
+}
+
+.navbar .navbar-brand {
+  margin-left: 53px; 
+}
+
+.usuario {
+  margin-left: 20px; 
+  font-weight: bold; 
+}
+
+
+.usuario {
+  margin-left: 20px;
+}
+
 .carousel-inner img {
   height: 400px;
   object-fit: cover;
