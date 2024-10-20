@@ -15,7 +15,6 @@
         <ul>
             <li><a href="telainicial.html">Agendamentos</a></li>
             <li><a href="clientes.html">Clientes</a></li>
-            <li><a href="cadastro.html">Cadastrar Clientes</a></li>
             <li><a href="profissionais.html">Profissionais</a></li>
             <li><a href="#">Configurações</a></li>
             <li><a href="/frontend/index.html">Sair</a></li>
@@ -33,7 +32,8 @@
                     <th>Foto</th>
                     <th>Nome</th>
                     <th>Especialidade</th>
-                    <th>Tempo de Contratação</th>
+                    <th>Horário</th>
+                    <th>Folga</th>
                 </tr>
             </thead>
             <tbody id="professionalsTable">
@@ -45,42 +45,23 @@
     <script>
         // Array de objetos representando os profissionais
         const professionals = [
-            { nome: "Maria Silva", especialidade: "Cabeleireiro", dataContratacao: "2020-09-15", foto: "https://via.placeholder.com/50" },
-            { nome: "João Souza", especialidade: "Manicure", dataContratacao: "2022-01-10", foto: "https://via.placeholder.com/50" },
-            { nome: "Ana Lima", especialidade: "Esteticista", dataContratacao: "2021-05-20", foto: "https://via.placeholder.com/50" },
-            { nome: "Carlos Pereira", especialidade: "Barbeiro", dataContratacao: "2019-07-05", foto: "https://via.placeholder.com/50" },
-            { nome: "Fernanda Costa", especialidade: "Maquiador", dataContratacao: "2023-03-30", foto: "https://via.placeholder.com/50" }
+            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 15:00", folga: "Terça" },
+            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 15:00", folga: "Terça" },
+            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 15:00", folga: "Terça" },
+            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 15:00", folga: "Terça" },
         ];
 
-        // Função para calcular o tempo de contratação
-        function calcularTempoContratacao(dataContratacao) {
-            const dataInicio = new Date(dataContratacao);
-            const dataAtual = new Date();
-            const anos = dataAtual.getFullYear() - dataInicio.getFullYear();
-            const meses = dataAtual.getMonth() - dataInicio.getMonth();
-            let totalMeses = anos * 12 + meses;
-
-            if (totalMeses < 0) {
-                totalMeses = 0; // Caso a data de contratação seja futura
-            }
-
-            if (anos > 0) {
-                return `${anos} ano${anos > 1 ? 's' : ''} (${totalMeses} mês${totalMeses > 1 ? 'es' : ''})`;
-            } else {
-                return `${totalMeses} mês${totalMeses > 1 ? 'es' : ''}`;
-            }
-        }
 
         // Função para exibir os profissionais na tabela
         function exibirProfissionais() {
             const tabela = document.getElementById('professionalsTable');
             professionals.forEach(prof => {
-                const tempoContratacao = calcularTempoContratacao(prof.dataContratacao);
                 const row = `<tr>
                                 <td><img src="${prof.foto}" alt="${prof.nome}"></td>
                                 <td>${prof.nome}</td>
                                 <td>${prof.especialidade}</td>
-                                <td>${tempoContratacao}</td>
+                                <td>${prof.horario}</td>
+                                <td>${prof.folga}</td>
                             </tr>`;
                 tabela.innerHTML += row;
             });
