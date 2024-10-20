@@ -10,25 +10,15 @@
     <div class="container">
         <h2>Confirmação de Agendamento</h2>
         <p>Seu agendamento foi confirmado com sucesso!</p>
-
         <div class="summary">
             <p><strong>Data:</strong> <span id="confirmed-date"></span></p>
             <p><strong>Horário:</strong> <span id="confirmed-time"></span></p>
-            <p><strong>Profissional:</strong> João Silva</p>
-            <p><strong>Especialidade:</strong> Esteticista</p>
-            <p><strong>Preço:</strong> R$ 80,00</p>
+            <p><strong>Serviços:</strong><span id="confirmed-services"></span></p>
+            <p><strong>Total:</strong> R$ 80,00</p>
         </div>
-
         <a href="../html/servicos.html" class="button">Sair</a>
     </div>
 
-    <script>
-        // Adicione aqui o código para definir a data e o horário confirmados
-        const confirmedDate = localStorage.getItem('confirmedDate') || 'Data não definida';
-        const confirmedTime = localStorage.getItem('confirmedTime') || 'Horário não definido';
-
-        document.getElementById('confirmed-date').textContent = confirmedDate;
-        document.getElementById('confirmed-time').textContent = confirmedTime;
-    </script>
+    <script src="../javascript/confirmacaoagendamentos.js"></script>
 </body>
 </html>

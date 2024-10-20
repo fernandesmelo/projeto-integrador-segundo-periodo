@@ -68,17 +68,6 @@ $(document).ready(function () {
   });
 });
 
-function updateProfessionalInfo() {
-  const professionalName = "João Silva";
-  const professionalSpecialty = "Esteticista";
-  const professionalPrice = "80,00";
-
-  document.getElementById("professional-name").textContent = professionalName;
-  document.getElementById("professional-specialty").textContent =
-    professionalSpecialty;
-  document.getElementById("professional-price").textContent = professionalPrice;
-}
-
 function updateAvailableTimes(date) {
   const timesList = document.getElementById("times-list");
   timesList.innerHTML = "";

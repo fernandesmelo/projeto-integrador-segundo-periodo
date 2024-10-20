@@ -106,5 +106,3 @@ function cancelarAgendamento() {
 }
 
 document.addEventListener('DOMContentLoaded', generateHTML);
-
-
