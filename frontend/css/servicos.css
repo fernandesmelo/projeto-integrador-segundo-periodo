@@ -14,17 +14,17 @@ body {
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: black; 
+  color: #0051A0; 
   font-weight: bold; 
 }
 
 .navbar .nav-link:hover,
 .navbar .navbar-brand:hover {
-  color: #0056b3; 
+  color: #003f80; 
 }
 
 .navbar .dropdown-item {
-  color: black; 
+  color: #0051A0; 
   font-weight: bold; 
 }
 
@@ -45,7 +45,6 @@ body {
   margin-left: 20px; 
   font-weight: bold; 
 }
-
 
 .usuario {
   margin-left: 20px;
@@ -143,7 +142,7 @@ button.category-btn:hover {
 }
 
 .total-section {
-  margin-top: 20px;
+  margin-top: 95px;
   padding: 15px;
   background-color: #f8f9fa;
   border: 1px solid #0051A0;
