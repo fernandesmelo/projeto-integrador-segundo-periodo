@@ -54,6 +54,11 @@ body {
     font-size: 24px;
 }
 
+#button-cdastrar-cliente {
+    background-color: #008D4C;
+    border-color: #008D4C;
+}
+
 .card {
     margin-bottom: 20px;
     border: 1px solid #e3e6f0;
@@ -64,7 +69,8 @@ body {
 }
 
 .card .card-header {
-    background-color: #f8f9fa;
+    background-color: #e58e1d;
+    color: #ffffff;
     font-size: 18px;
     padding: 10px;
 }
@@ -75,7 +81,7 @@ body {
 }
 
 .btn-edit {
-    background-color: #007bff;
+    background-color: #008D4C;
     color: white;
     border-radius: 5px;
     padding: 10px 20px;
