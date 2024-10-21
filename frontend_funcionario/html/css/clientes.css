@@ -94,6 +94,16 @@ body {
     background-color: #0056b3;
 }
 
+.btn-action {
+    background-color: #e91d1d;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    
+  }
+
 /* Hover effects for sidebar items */
 .sidebar ul li:hover {
     background-color: #495057;
