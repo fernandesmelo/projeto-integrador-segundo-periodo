@@ -6,7 +6,7 @@ body {
 
 .sidebar {
   width: 250px;
-  background-color: #343a40;
+  background-color: #5a6268;
   color: white;
   position: fixed;
   height: 100%;
@@ -53,6 +53,11 @@ body {
   font-size: 24px;
 }
 
+#button-cadastrar-cliente {
+  background-color: #e58e1d;
+  border-color: #e58e1d;
+}
+
 .card {
   margin-bottom: 20px;
   border: 1px solid #e3e6f0;
@@ -63,7 +68,8 @@ body {
 }
 
 .card .card-header {
-  background-color: #f8f9fa;
+  background-color: #064988;
+  color: #ffffff;
   font-size: 18px;
   padding: 10px;
 }
@@ -72,8 +78,6 @@ body {
   padding: 20px;
   flex-grow: 1; /* Permite que o card cresça para acomodar o conteúdo */
 }
-
-/* Aumentando a especificidade */
 
 
 .card .card-body .btn-action {
@@ -92,7 +96,7 @@ body {
 
 
 .card .card-body .btn-secondary-action {
-  background-color: #e58e1d;
+  background-color: #008D4C;
   color: white;
   border-radius: 5px;
   padding: 10px 20px;
