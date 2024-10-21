@@ -22,6 +22,10 @@ p {
     margin: 10px 0;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .button {
     display: inline-block;
     margin-top: 20px;
@@ -32,8 +36,14 @@ p {
     border-radius: 5px;
 }
 
-.button:hover {
-    background-color: #0056b3;
+.button-sair {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .summary {

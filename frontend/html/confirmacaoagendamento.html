@@ -4,21 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento - Salão Empresa Pedagógica - Senac Pernambuco</title>
-    <link rel="stylesheet" href="../css/confirmacaoagendamento.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/confirmacaoagendamento.css">
 </head>
 <body>
     <div class="container">
-        <h2>Confirmação de Agendamento</h2>
-        <p>Seu agendamento foi confirmado com sucesso!</p>
+        <h2>Confirme seu agendamento</h2>
         <div class="summary">
-            <p><strong>Data:</strong> <span id="confirmed-date"></span></p>
-            <p><strong>Horário:</strong> <span id="confirmed-time"></span></p>
-            <p><strong>Serviços:</strong><span id="confirmed-services"></span></p>
-            <p><strong>Total:</strong> R$ 80,00</p>
+            <p><strong>Data:</strong> 30/10/2024</p>
+            <p><strong>Horário:</strong> 14:00</p>
+            <p><strong>Serviços:</strong></p>
+            <ul>
+                <li>Cabeleleiro: Corte Feminino R$ 65,00</li>
+                <li>Manicure e Pedicure: Manicure R$ 23,00</li>
+                <li>Estética: Limpeza de Pele R$ 85,00</li>
+                <li>Depilação com Cera: Axilas R$ 24,00</li>
+            </ul>
+            <p><strong>Total:</strong> R$ 197,00</p>
         </div>
-        <a href="../html/servicos.html" class="button">Sair</a>
+        <a href="#" class="button" onclick="confirmarAgendamento()">Confirmar</a>
+        <a href="../html/servicos.html" class="button-sair">Sair</a>
     </div>
 
-    <script src="../javascript/confirmacaoagendamentos.js"></script>
+    <!-- Modal de confirmação -->
+    <div class="modal fade" id="confirmacaoModal" tabindex="-1" aria-labelledby="confirmacaoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmacaoModalLabel">
+                        <i class="fas fa-check-circle" style="color: green; margin-right: 8px;"></i>
+                        Agendamento Confirmado
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="alert alert-success">
+                        <p class="mt-3">Agendamento confirmado com sucesso!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../javascript/confirmacaoAgendamento.js"></script>
 </body>
 </html>
