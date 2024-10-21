@@ -68,15 +68,9 @@ h2 {
 }
 
 .confirm-button {
-    background-color: #28a745;
+    background-color: #F39C21;
     color: white;
 }
-
-.cancel-button {
-    background-color: #dc3545;
-    color: white;
-}
-
 .modal {
     display: none;
     position: fixed;
