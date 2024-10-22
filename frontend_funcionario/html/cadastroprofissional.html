@@ -15,6 +15,11 @@
             margin-left: 270px; /* Espaço para a sidebar */
             padding: 20px;
         }
+
+        #button-cadastrar {
+            background-color: #008D4C;
+            border-color: #008D4C;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +63,7 @@
                     <option value="Cabeleireiro">Cabeleireiro(a)</option>
                     <option value="Manicure">Manicure e Pedicure</option>
                     <option value="Esteticista">Esteticista</option>
-                    <option value="Barbeiro">Depilador(a)</option>
+                    <option value="Barbeiro">Depiladora</option>
                 </select>
                 <small class="form-text text-muted">Segure Ctrl para selecionar múltiplas especialidades.</small>
             </div>
@@ -66,16 +71,14 @@
                 <label for="sexo">Horário:</label>
                 <select class="form-control" id="horario" required>
                     <option value="">Selecione</option>
-                    <option value="Masculino">08:00 - 14:00</option>
-                    <option value="Feminino">10:00 - 16:00</option>
-                    <option value="Outro">12:00 - 18:00</option>
+                    <option value="Masculino">08:00 - 18:00</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="nome">Folga:</label>
                 <input type="text" class="form-control" id="folga" required>
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar Profissional</button>
+            <button type="submit" class="btn btn-primary" id="button-cadastrar">Cadastrar</button>
         </form>
     </div>
 
