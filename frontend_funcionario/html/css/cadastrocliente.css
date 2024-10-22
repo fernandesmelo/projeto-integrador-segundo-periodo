@@ -27,10 +27,6 @@ body {
     margin: 20px 0;
 }
 
-.titulo {
-    text-align: center;
-}
-
 /*alinha o texto 'nome cliente no centro */
 .col-md-10 {
     text-align: center;
@@ -51,7 +47,7 @@ body {
     padding: 20px;
     max-width: 1700px; /* Máxima largura para o formulário */
     margin-right: auto;
-    background-color: #f8f9fa;
+    background-color: #FFFFFF;
     border-radius: 10px;
     padding: 30px;
 }
@@ -60,11 +56,9 @@ body {
     margin-bottom: 15px;
 }
 
-.btn-submit {
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    padding: 10px 20px;
+.btn.btn-primary {
+    background-color: #008D4C;
+    border-color: #008D4C;
 }
 
 .btn-submit:hover {
@@ -80,3 +74,4 @@ body {
 .row {
     margin-bottom: 15px;
 }
+
