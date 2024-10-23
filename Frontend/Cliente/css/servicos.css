@@ -6,44 +6,44 @@ body {
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.6); 
-  position: fixed; 
-  width: 100%; 
-  z-index: 1000; 
+  background-color: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: #0051A0; 
-  font-weight: bold; 
+  color: #0051A0;
+  font-weight: bold;
 }
 
 .navbar .nav-link:hover,
 .navbar .navbar-brand:hover {
-  color: #003f80; 
+  color: #003f80;
 }
 
 .navbar .dropdown-item {
-  color: #0051A0; 
-  font-weight: bold; 
+  color: #0051A0;
+  font-weight: bold;
 }
 
 .navbar .dropdown-item:hover {
-  background-color: rgba(0, 0, 0, 0.1); 
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .navbar .ml-auto {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
 }
 
 .navbar .navbar-brand {
-  margin-left: 53px; 
+  margin-left: 53px;
 }
 
 .usuario {
-  margin-left: 20px; 
-  font-weight: bold; 
+  margin-left: 20px;
+  font-weight: bold;
 }
 
 .usuario {
@@ -149,8 +149,8 @@ button.category-btn:hover {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky; 
-  top: 20px; 
+  position: sticky;
+  top: 20px;
 }
 
 .titulo {
@@ -176,7 +176,7 @@ button.category-btn:hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
   flex: 1;
-  margin-right: 10px; 
+  margin-right: 10px;
   text-decoration: none;
   text-align: center;
 }
@@ -192,7 +192,7 @@ a:hover {
 
 .btn-cancelar {
   background-color: #dc3545;
-  margin-right: 0; 
+  margin-right: 0;
 }
 
 .btn-cancelar:hover {
@@ -205,12 +205,12 @@ a {
 }
 
 #servicos-container {
-  max-height: 600px; 
-  overflow-y: auto; 
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 #services-list {
-  text-align: left; 
+  text-align: left;
   padding-left: 0;
 }
 
@@ -218,12 +218,26 @@ a {
   list-style-type: none;
   padding: 5px 0;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e0e0e0; 
+  border-bottom: 1px solid #e0e0e0;
 }
 
 #services-list li span {
   margin-right: 10px;
 }
 
+@media screen and (min-width: 200px) and (max-width: 762px) {
+  .total-section {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  .navbar .navbar-collapse {
+    text-align: right;
+  }
+  
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+}
