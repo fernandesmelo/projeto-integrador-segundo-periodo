@@ -64,11 +64,9 @@ h2 {
     cursor: pointer;
     margin: 5px;
     font-size: 16px;
-}
-
-.confirm-button {
     background-color: #0051A0;
     color: white;
+    text-decoration: none;
 }
 .modal {
     display: none;
