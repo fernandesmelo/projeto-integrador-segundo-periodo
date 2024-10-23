@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salão Empresa Pedagógica - Senac Pernambuco</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/profissionais.css">
+    <link rel="stylesheet" href="../css/profissionais.css">
 </head>
-
 <body>
-
-    <!-- Sidebar -->
     <nav class="sidebar">
         <h2>Menu</h2>
         <ul>
-            <li><a href="telainicial.html">Agendamentos</a></li>
-            <li><a href="clientes.html">Clientes</a></li>
-            <li><a href="profissionais.html">Profissionais</a></li>
+            <li><a href="../html/agendamentos.html">Agendamentos</a></li>
+            <li><a href="../html/clientes.html">Clientes</a></li>
+            <li><a href="../html/profissionais.html">Profissionais</a></li>
             <li><a href="#">Configurações</a></li>
-            <li><a href="/frontend/index.html">Sair</a></li>
+            <li><a href="../../cliente/index.html">Sair</a></li>
         </ul>
     </nav>
-
-    <!-- Conteúdo principal -->
-    <!-- Conteúdo principal -->
     <div class="content">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>Profissionais Cadastrados</h2>
-            <a href="cadastroprofissional.html">
+            <a href="../html/cadastro-profissional.html">
                 <button class="btn btn-primary" id="button-cadastrar-profissional">Cadastrar Profissional</button>
             </a>
         </div>
-
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -44,41 +36,10 @@
                 </tr>
             </thead>
             <tbody id="professionalsTable">
-                <!-- Os dados dos profissionais serão inseridos aqui -->
             </tbody>
         </table>
     </div>
-
-
-    <script>
-        // Array de objetos representando os profissionais
-        const professionals = [
-            { foto: "../assets/cabeleleira.jpeg", nome: "Maria Silva", especialidade: "Cabeleireira", horario: "08:00 - 18:00", folga: "Segunda-feira" },
-            { foto: "../assets/esteticista.jpeg", nome: "Lucas Ribeiro", especialidade: "Esteticista", horario: "08:00 - 18:00", folga: "Terça-feira" },
-            { foto: "../assets/manicure e pedicure.jpeg", nome: "Maria Clara", especialidade: "Manicure e Pedicure", horario: "08:00 - 18:00", folga: "Quarta-feira" },
-            { foto: "../assets/depiladora.jpeg", nome: "Júlia Novais", especialidade: "Depiladora", horario: "08:00 - 18:00", folga: "Segunda-feira" },
-        ];
-
-
-        // Função para exibir os profissionais na tabela
-        function exibirProfissionais() {
-            const tabela = document.getElementById('professionalsTable');
-            professionals.forEach(prof => {
-                const row = `<tr>
-                                <td><img src="${prof.foto}" alt="${prof.nome}"></td>
-                                <td>${prof.nome}</td>
-                                <td>${prof.especialidade}</td>
-                                <td>${prof.horario}</td>
-                                <td>${prof.folga}</td>
-                            </tr>`;
-                tabela.innerHTML += row;
-            });
-        }
-
-        // Chama a função para exibir os profissionais ao carregar a página
-        exibirProfissionais();
-    </script>
-
+    <script src="../javascript/profissionais.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

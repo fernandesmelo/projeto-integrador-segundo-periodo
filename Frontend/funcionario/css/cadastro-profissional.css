@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+#button-cadastrar {
+    background-color: #008D4C;
+    border-color: #008D4C;
+}
