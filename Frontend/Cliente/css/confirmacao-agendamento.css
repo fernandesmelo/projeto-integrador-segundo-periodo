@@ -52,3 +52,13 @@ a:hover {
     background-color: #e7f1ff;
     border-left: 5px solid #007bff;
 }
+
+@media screen and (min-width: 200px) and (max-width: 762px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0 30px;
+    }
+}
