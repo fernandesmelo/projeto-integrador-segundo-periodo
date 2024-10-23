@@ -116,7 +116,7 @@ button:hover {
   width: 20px;
 }
 
-@media screen and (min-width: 200px) and (max-width: 800px) {
+@media screen and (min-width: 200px) and (max-width: 762px) {
   .cadastro-image-container {
     display: none;
   }
