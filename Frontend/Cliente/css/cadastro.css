@@ -115,3 +115,19 @@ button:hover {
 #aluno-nao {
   width: 20px;
 }
+
+@media screen and (min-width: 200px) and (max-width: 800px) {
+  .cadastro-image-container {
+    display: none;
+  }
+
+  .cadastro-container {
+    justify-content: center;
+    margin: 0;
+    padding-right: 10px;
+  }
+
+  .cadastro-card {
+    width: 100%;
+  }
+}
