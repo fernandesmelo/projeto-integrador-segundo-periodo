@@ -50,3 +50,13 @@ body {
     border-radius: 50%;
     /* Torna a imagem redonda */
 }
+
+#button-cadastrar-profissional {
+    background-color: #008D4C;
+    border-color: #008D4C;
+}
+
+th {
+    background-color: #064988;
+    color: #FFFFFF
+}

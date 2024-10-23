@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profissionais Cadastrados</title>
+    <title>Salão Empresa Pedagógica - Senac Pernambuco</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/profissionais.css">
 </head>
+
 <body>
 
     <!-- Sidebar -->
@@ -22,9 +24,14 @@
     </nav>
 
     <!-- Conteúdo principal -->
+    <!-- Conteúdo principal -->
     <div class="content">
-        <h2>Profissionais Cadastrados</h2>
-        <a href="cadastroprofissional.html"><button class="btn btn-primary mb-3">Cadastrar Profissionais</button></a>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Profissionais Cadastrados</h2>
+            <a href="cadastroprofissional.html">
+                <button class="btn btn-primary" id="button-cadastrar-profissional">Cadastrar Profissional</button>
+            </a>
+        </div>
 
         <table class="table table-bordered">
             <thead>
@@ -42,13 +49,14 @@
         </table>
     </div>
 
+
     <script>
         // Array de objetos representando os profissionais
         const professionals = [
-            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 14:00", folga: "Segunda" },
-            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 14:00", folga: "Quarta" },
-            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 14:00", folga: "Quinta" },
-            { foto: "https://via.placeholder.com/50", nome: "Maria Silva", especialidade: "Cabeleireiro", horario: "08:00 - 14:00", folga: "Sexta" },
+            { foto: "../assets/cabeleleira.jpeg", nome: "Maria Silva", especialidade: "Cabeleireira", horario: "08:00 - 18:00", folga: "Segunda-feira" },
+            { foto: "../assets/esteticista.jpeg", nome: "Lucas Ribeiro", especialidade: "Esteticista", horario: "08:00 - 18:00", folga: "Terça-feira" },
+            { foto: "../assets/manicure e pedicure.jpeg", nome: "Maria Clara", especialidade: "Manicure e Pedicure", horario: "08:00 - 18:00", folga: "Quarta-feira" },
+            { foto: "../assets/depiladora.jpeg", nome: "Júlia Novais", especialidade: "Depiladora", horario: "08:00 - 18:00", folga: "Segunda-feira" },
         ];
 
 
@@ -75,4 +83,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

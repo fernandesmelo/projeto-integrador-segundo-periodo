@@ -57,8 +57,7 @@ h2 {
     text-align: center;
 }
 
-.confirm-button,
-.cancel-button {
+.confirm-button {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
