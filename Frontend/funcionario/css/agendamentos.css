@@ -138,12 +138,12 @@ body {
   .sidebar {
     display: none;
     width: 200px;
-    height: 250px;
+    height: 350px;
     background-color: #343a40;
     color: white;
     position: absolute;
-    top: 60px; /* Ajusta a posição para ficar abaixo do ícone do menu */
-    z-index: 1001; /* Coloca o menu acima dos outros elementos */
+    top: 60px;
+    z-index: 1001; 
     border-radius: 5px;
     right: 0;
   }
