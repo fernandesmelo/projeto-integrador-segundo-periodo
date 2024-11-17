@@ -153,13 +153,9 @@ body {
     font-size: 30px;
     cursor: pointer;
     position: absolute;
-    top: 20px;
+    top: 16px;
     right: 20px;
-    z-index: 1000;
-  }
-
-  .menu-active {
-    display: block;
+    color: #003f80;
   }
 
   .sidebar ul {

@@ -109,3 +109,65 @@ body {
     background-color: #495057;
     border-radius: 5px;
 }
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (min-width: 200px) and (max-width: 762px) {
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .content {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0
+    }
+  
+    .content header {
+      flex-wrap: wrap;
+    }
+  
+    .sidebar {
+      display: none;
+      width: 200px;
+      height: 350px;
+      background-color: #343a40;
+      color: white;
+      position: absolute;
+      top: 60px;
+      z-index: 1001; 
+      border-radius: 5px;
+      right: 0;
+    }
+  
+    .hamburger {
+      display: block;
+      font-size: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      color: #003f80;
+    }
+
+    .sidebar ul {
+      display: block;
+      background-color: #343a40;
+      padding: 10px;
+    }
+  
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    #button-cadastrar-cliente {
+      margin-top: 10px;
+    }
+  }
