@@ -62,6 +62,7 @@ body {
   display: block;
   width: 56% !important;
 }
+
 .card {
   margin-bottom: 20px;
   border: 1px solid #e3e6f0;
@@ -160,6 +161,13 @@ body {
     top: 16px;
     right: 20px;
     color: #003f80;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .sidebar ul {
