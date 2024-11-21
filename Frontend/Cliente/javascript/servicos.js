@@ -29,6 +29,24 @@ function addService(preco, nome) {
   updateUI(); 
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Recupera o objeto 'cliente' do localStorage
+  const cliente = JSON.parse(localStorage.getItem('cliente'));
+
+  // Verifica se o cliente existe e tem o atributo 'nome'
+  if (cliente && cliente.nome) {
+    // Seleciona o elemento com ID 'navbarDropdown'
+    const dropdown = document.querySelector('#navbarDropdown');
+
+    // Atualiza o conteúdo do dropdown com o nome do cliente
+    dropdown.innerHTML = `
+      <img src="../arquivos/imagens/foto-usuario.jpg" alt="User" width="30" height="30" class="rounded-circle">
+      ${cliente.nome}
+    `;
+  } else {
+    console.error('Cliente não encontrado no localStorage ou atributo nome está ausente.');
+  }
+});
 function removeService(preco, nome) {
   total -= preco; 
   const index = services.findIndex(service => service.nome === nome && service.preco === preco); 
