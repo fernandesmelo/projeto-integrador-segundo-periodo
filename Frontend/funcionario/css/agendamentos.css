@@ -58,6 +58,10 @@ body {
   border-color: #008D4C;
 }
 
+.form-control {
+  display: block;
+  width: 56% !important;
+}
 .card {
   margin-bottom: 20px;
   border: 1px solid #e3e6f0;
