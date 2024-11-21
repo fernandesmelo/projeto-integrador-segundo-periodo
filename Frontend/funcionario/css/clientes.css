@@ -155,9 +155,13 @@ body {
     font-size: 30px;
     cursor: pointer;
     position: absolute;
-    top: 16px;
+    top: 20px;
     right: 20px;
     color: #003f80;
+  }
+
+  .welcome-text {
+    font-size: 30px;
   }
 
   header {

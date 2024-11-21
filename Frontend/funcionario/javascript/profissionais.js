@@ -1,3 +1,8 @@
+function toggleMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+  }
+
 const professionals = [
     { foto: "../arquivos/imagens/cabeleleira.jpeg", nome: "Maria Silva", especialidade: "Cabeleireira", horario: "08:00 - 18:00", folga: "Segunda-feira" },
     { foto: "../arquivos/imagens/esteticista.jpeg", nome: "Lucas Ribeiro", especialidade: "Esteticista", horario: "08:00 - 18:00", folga: "Terça-feira" },
