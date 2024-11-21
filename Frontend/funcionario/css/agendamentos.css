@@ -119,7 +119,7 @@ body {
 }
 
 .hamburger {
- display: none;
+  display: none;
 }
 
 @media screen and (min-width: 200px) and (max-width: 762px) {
@@ -148,7 +148,7 @@ body {
     color: white;
     position: absolute;
     top: 60px;
-    z-index: 1001; 
+    z-index: 1001;
     border-radius: 5px;
     right: 0;
   }
