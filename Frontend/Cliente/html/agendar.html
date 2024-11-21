@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento - Salão Empresa Pedagógica - Senac Pernambuco</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.min.css"
-        media="print" />
+    <!-- FullCalendar CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/agendar.css">
 </head>
 <body>
@@ -26,19 +25,11 @@
             <a href="../html/confirmacao-agendamento.html" id="finalize-button" class="confirm-button" style="display: none;">Agendar</a>
         </div>
     </div>
-    <div id="eventModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>Adicionar Evento</h2>
-            <label for="eventTitle">Título do Evento:</label>
-            <input type="text" id="eventTitle" placeholder="Digite o título do evento" aria-label="Título do Evento">
-            <button id="addEventButton">Adicionar Evento</button>
-        </div>
-    </div>
+    <!-- FullCalendar Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/lang/pt-br.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/pt-br.js"></script>
     <script src="../javascript/agendar.js"></script>
 </body>
 </html>

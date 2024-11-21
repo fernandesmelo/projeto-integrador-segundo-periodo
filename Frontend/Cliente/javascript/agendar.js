@@ -1,14 +1,15 @@
-let selectedDate = null;
-let selectedTime = null;
-
 $(document).ready(function () {
+  let selectedDate = null;
+  let selectedTime = null;
+
   const bookedDates = [
     moment().add(2, "days").format("DD-MM-YYYY"),
     moment().add(5, "days").format("DD-MM-YYYY"),
   ];
 
+  // Inicializa o calendário
   $("#calendar").fullCalendar({
-    locale: "pt-br",
+    locale: "pt-br", 
     selectable: true,
     selectHelper: true,
     select: function (start) {
@@ -66,59 +67,64 @@ $(document).ready(function () {
       alert("Você clicou em: " + event.title);
     },
   });
-});
 
-function updateAvailableTimes(date) {
-  const timesList = document.getElementById("times-list");
-  timesList.innerHTML = "";
+  // aqui atualiza os horários pra a data selecionada
+  function updateAvailableTimes(date) {
+    const timesList = document.getElementById("times-list");
+    timesList.innerHTML = "";
 
-  const availableTimes = ["09:00", "10:00", "11:00", "14:00", "15:00"];
+    const availableTimes = ["09:00", "10:00", "11:00", "14:00", "15:00"];
 
-  availableTimes.forEach(function (time) {
-    const button = document.createElement("button");
-    button.className = "time-button";
-    button.textContent = time;
-    button.onclick = function () {
-      selectTime(time);
-    };
-    timesList.appendChild(button);
-  });
+    availableTimes.forEach(function (time) {
+      const button = document.createElement("button");
+      button.className = "time-button";
+      button.textContent = time;
+      button.onclick = function () {
+        selectTime(time);
+      };
+      timesList.appendChild(button);
+    });
 
-  document.getElementById("available-times").style.display = "block";
-}
-
-function selectTime(time) {
-  const buttons = document.querySelectorAll(".time-button");
-  buttons.forEach((button) => button.classList.remove("selected-time"));
-  event.target.classList.add("selected-time");
-  selectedTime = time;
-
-  document.getElementById("summary-date").textContent = selectedDate;
-  document.getElementById("summary-time").textContent = selectedTime;
-  document.getElementById("summary").style.display = "block";
-  document.getElementById("finalize-button").style.display = "block";
-}
-
-document.getElementById("finalize-button").onclick = function () {
-  window.location.href = "./confirmacaoagendamento.html";
-};
-
-document.getElementById("closeModal").onclick = function () {
-  document.getElementById("eventModal").style.display = "none";
-};
-
-document.getElementById("addEventButton").onclick = function () {
-  const title = document.getElementById("eventTitle").value;
-  if (title) {
-    $("#calendar").fullCalendar(
-      "renderEvent",
-      {
-        title: title,
-        start: selectedDate,
-        allDay: true,
-      },
-      true
-    );
-    document.getElementById("eventModal").style.display = "none";
+    document.getElementById("available-times").style.display = "block";
   }
-};
+
+  // seleção de horarios
+  function selectTime(time) {
+    const buttons = document.querySelectorAll(".time-button");
+    buttons.forEach((button) => button.classList.remove("selected-time"));
+    event.target.classList.add("selected-time");
+    selectedTime = time;
+
+    document.getElementById("summary-date").textContent = selectedDate;
+    document.getElementById("summary-time").textContent = selectedTime;
+    document.getElementById("summary").style.display = "block";
+    document.getElementById("finalize-button").style.display = "block";
+  }
+
+  // finaliza o agendamento
+  document.getElementById("finalize-button").onclick = function () {
+    window.location.href = "./confirmacaoagendamento.html";
+  };
+
+  // Fecha o modal
+  document.getElementById("closeModal").onclick = function () {
+    document.getElementById("eventModal").style.display = "none";
+  };
+
+  // Adiciona eventos
+  document.getElementById("addEventButton").onclick = function () {
+    const title = document.getElementById("eventTitle").value;
+    if (title) {
+      $("#calendar").fullCalendar(
+        "renderEvent",
+        {
+          title: title,
+          start: selectedDate,
+          allDay: true,
+        },
+        true
+      );
+      document.getElementById("eventModal").style.display = "none";
+    }
+  };
+});
