@@ -1,3 +1,3 @@
 function confirmarAgendamento() {
-    $('#confirmacaoModal').modal('show');
+  $("#confirmacaoModal").modal("show");
 }

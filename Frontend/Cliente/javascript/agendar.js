@@ -7,9 +7,8 @@ $(document).ready(function () {
     moment().add(5, "days").format("DD-MM-YYYY"),
   ];
 
-  // Inicializa o calendário
   $("#calendar").fullCalendar({
-    locale: "pt-br", 
+    locale: "pt-br",
     selectable: true,
     selectHelper: true,
     select: function (start) {
@@ -68,7 +67,6 @@ $(document).ready(function () {
     },
   });
 
-  // aqui atualiza os horários pra a data selecionada
   function updateAvailableTimes(date) {
     const timesList = document.getElementById("times-list");
     timesList.innerHTML = "";
@@ -88,7 +86,6 @@ $(document).ready(function () {
     document.getElementById("available-times").style.display = "block";
   }
 
-  // seleção de horarios
   function selectTime(time) {
     const buttons = document.querySelectorAll(".time-button");
     buttons.forEach((button) => button.classList.remove("selected-time"));
@@ -101,17 +98,14 @@ $(document).ready(function () {
     document.getElementById("finalize-button").style.display = "block";
   }
 
-  // finaliza o agendamento
   document.getElementById("finalize-button").onclick = function () {
     window.location.href = "./confirmacaoagendamento.html";
   };
 
-  // Fecha o modal
   document.getElementById("closeModal").onclick = function () {
     document.getElementById("eventModal").style.display = "none";
   };
 
-  // Adiciona eventos
   document.getElementById("addEventButton").onclick = function () {
     const title = document.getElementById("eventTitle").value;
     if (title) {
