@@ -54,6 +54,72 @@ h2 {
     background-color: #28a745 !important;
 }
 
+.available-professionals {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f0f0f0; 
+    border-radius: 5px;
+}
+
+.available-professionals h2 {
+    color: #333;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.available-professionals select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.available-professionals select:focus {
+    border-color: #0051A0;
+    outline: none;
+}
+
+.available-professionals .disclaimer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.professional-choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.choice-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0051A0;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.choice-button:hover {
+    background-color: #003c7a;
+}
+
+.choice-button.active {
+    background-color: #28a745; 
+    color: white;
+    font-weight: bold;
+    border: 2px solid #1e7a33;
+}
+
 .action-buttons {
     text-align: center;
 }
@@ -115,5 +181,21 @@ h2 {
 
     .professional-image {
         margin-bottom: 10px;
+    }
+
+    .available-professionals {
+        padding: 10px;
+    }
+
+    .available-professionals h2 {
+        font-size: 16px;
+    }
+
+    .available-professionals select {
+        font-size: 14px;
+    }
+
+    .available-professionals .disclaimer {
+        font-size: 12px;
     }
 }

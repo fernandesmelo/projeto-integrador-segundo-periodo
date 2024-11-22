@@ -15,6 +15,28 @@
             <h2>Horários Disponíveis</h2>
             <div id="times-list"></div>
         </div>
+
+        <div class="available-professionals" id="available-professionals-container" style="display: none;">
+            <h2>Deseja selecionar um profissional de preferência?</h2>
+            <div class="professional-choice-buttons">
+                <button id="choose-professional-yes" class="choice-button">Sim</button>
+                <button id="choose-professional-no" class="choice-button">Não</button>
+            </div>
+            <div id="professional-dropdown" style="display: none;">
+                <h2>Escolha do Profissional</h2>
+                <select id="professionals-list">
+                    <option value="" disabled selected>Selecione um profissional</option>
+                    <option value="profissional1">Maria Silva</option>
+                    <option value="profissional2">Lucas Ribeiro</option>
+                    <option value="profissional3">Maria Clara</option>
+                    <option value="profissional4">Júlia Novaes</option>
+                </select>
+                <p class="disclaimer">
+                    * A escolha do profissional está sujeita à disponibilidade.
+                </p>
+            </div>
+        </div>
+
         <div class="summary" id="summary" style="display: none;">
             <h2>Resumo do Agendamento</h2>
             <p><strong>Data:</strong> <span id="summary-date"></span></p>
@@ -30,5 +52,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/pt-br.js"></script>
     <script src="../javascript/agendar.js"></script>
-</body>
-</html>
