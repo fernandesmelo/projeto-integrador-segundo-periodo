@@ -7,12 +7,12 @@ body {
 .cadastro-container {
   display: flex;
   justify-content: space-between;
-  height: 100vh; 
+  height: 100vh;
   margin: 0 0 0 10%;
 }
 
 .cadastro-card {
-  width: 40%; 
+  width: 40%;
   padding: 20px;
   background-color: #ffffff;
 }
@@ -33,7 +33,7 @@ h1 {
 .input-group input,
 .input-group select,
 button {
-  width: 100%; 
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -78,11 +78,11 @@ button:hover {
 }
 
 .cadastro-image-container {
-  width: 40%; 
-  position: fixed; 
+  width: 40%;
+  position: fixed;
   top: 0;
   right: 0;
-  height: 100%; 
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,7 +111,7 @@ button:hover {
   margin-top: 10px;
 }
 
-#aluno-sim, 
+#aluno-sim,
 #aluno-nao {
   width: 20px;
 }

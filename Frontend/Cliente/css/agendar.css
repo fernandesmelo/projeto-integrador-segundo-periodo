@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 20px;
 }
+
 .navbar .dropdown-toggle img {
     margin-right: 5px;
 }
@@ -68,6 +69,7 @@ h2 {
     color: white;
     text-decoration: none;
 }
+
 .modal {
     display: none;
     position: fixed;

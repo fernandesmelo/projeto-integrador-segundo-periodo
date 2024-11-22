@@ -236,13 +236,13 @@ a {
   .navbar-toggler {
     border-color: #003f80;
   }
-  
+
   .navbar-toggler-icon {
     position: relative;
     width: 30px;
     height: 21px;
   }
-  
+
   .navbar-toggler-icon::before,
   .navbar-toggler-icon::after,
   .navbar-toggler-icon div {
@@ -253,20 +253,20 @@ a {
     height: 3px;
     left: 0;
   }
-  
+
   .navbar-toggler-icon div {
     top: 9px;
   }
-  
+
   .navbar-toggler-icon::before {
-    top: 0; 
+    top: 0;
   }
-  
+
   .navbar-toggler-icon::after {
-    top: 18px; 
+    top: 18px;
   }
-  
-  
+
+
   .navbar-collapse {
     text-align: left;
   }
@@ -276,7 +276,7 @@ a {
   }
 
   .nav-item {
-    border-bottom: 1px solid #f1f1f1; 
+    border-bottom: 1px solid #f1f1f1;
     width: 100%;
     text-align: left;
   }
