@@ -1,33 +1,4 @@
-let total = 0;
-const services = [];
-const servicos = [
-  { categoria: "Cabeleireiro", nome: "Corte Feminino", preco: 65 },
-  { categoria: "Cabeleireiro", nome: "Corte Masculino", preco: 45 },
-  { categoria: "Cabeleireiro", nome: "Luzes", preco: 200 },
-  { categoria: "Cabeleireiro", nome: "Escova", preco: 40 },
-  { categoria: "Cabeleireiro", nome: "Barba / Design de Barba", preco: 40 },
-  { categoria: "Manicure e Pedicure", nome: "Manicure", preco: 23 },
-  { categoria: "Manicure e Pedicure", nome: "Esmaltação (Cortar + Lixar + Esmaltar)", preco: 13 },
-  { categoria: "Manicure e Pedicure", nome: "Francesinha ou Inglesinha", preco: 5 },
-  { categoria: "Manicure e Pedicure", nome: "Pedicure + Manicure", preco: 45 },
-  { categoria: "Manicure e Pedicure", nome: "Pedicure", preco: 23 },
-  { categoria: "Estética", nome: "Drenagem Linfática Corporal Manual (por área)", preco: 65 },
-  { categoria: "Estética", nome: "Limpeza de Pele", preco: 85 },
-  { categoria: "Estética", nome: "Reflexologia Podal", preco: 85 },
-  { categoria: "Estética", nome: "Revitalização Facial", preco: 85 },
-  { categoria: "Estética", nome: "Ventosaterapia (Sessão 40 minutos)", preco: 50 },
-  { categoria: "Depilação com Cera", nome: "Depilação Feminina - 1/2 Pernas", preco: 30 },
-  { categoria: "Depilação com Cera", nome: "Axilias", preco: 24 },
-  { categoria: "Depilação com Cera", nome: "Virilha Simples (Contorno)", preco: 28 },
-  { categoria: "Depilação com Cera", nome: "Pernas Completas", preco: 55 },
-  { categoria: "Depilação com Cera", nome: "Coxas", preco: 40 },
-];
 
-function addService(preco, nome) {
-  total += preco;
-  services.push({ nome: nome, preco: preco });
-  updateUI();
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   // Recupera o objeto 'cliente' do localStorage
@@ -47,15 +18,129 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Cliente não encontrado no localStorage ou atributo nome está ausente.');
   }
 });
-function removeService(preco, nome) {
-  total -= preco;
-  const index = services.findIndex(
-    (service) => service.nome === nome && service.preco === preco
-  );
-  if (index > -1) {
-    services.splice(index, 1);
+let services = []; 
+let total = 0;
+
+let categoriasCache = {}; // cache para armazenar as categorias no navegador local
+
+async function generateHTML() {
+  const container = document.getElementById("servicos-container");
+  container.innerHTML = "<p>Carregando...</p>"; // exibe um estado de carregamento aguardando a requisição
+
+  try {
+    // requisição das categorias
+    const categoriasResponse = await fetch("http://localhost:8080/salaosenac/categorias"); 
+    if (!categoriasResponse.ok) {
+      throw new Error("Erro ao carregar as categorias");
+    }
+    
+    const categorias = await categoriasResponse.json();
+    console.log("Categorias recebidas:", categorias)
+
+    // guardando as categorias em um cache para facilitar a busca pelo nome
+    categorias.forEach((categoria) => {
+      categoriasCache[categoria.idCategoria] = categoria.nome; // transformando cada  categoria.idCategoria em chave e passando seu nome como valor
+    });
+
+    console.log(categoriasCache); //verificando se deu certo
+
+
+    // requisição para os serviços
+    const servicosResponse = await fetch("http://localhost:8080/salaosenac/servicos"); 
+    if (!servicosResponse.ok) {
+      throw new Error("Erro ao carregar os serviços");
+    }
+
+    const servicos = await servicosResponse.json();
+
+    // agrupando os serviços por categoria
+    const categoriasAgrupadas = servicos.reduce((acc, servico) => {
+      const categoriaId = servico.categoriaId || "Categoria nao encontrada";
+      if (!acc[categoriaId]) {
+        acc[categoriaId] = [];
+      }
+      acc[categoriaId].push(servico);
+      console.log(categoriaId)
+      return acc;
+    }, {});
+
+    // limpando o container
+    container.innerHTML = "";
+
+    // renderizando as categorias e serviços
+    Object.entries(categoriasAgrupadas).forEach(([categoriaId, servicos]) => {
+      const categoryDiv = document.createElement("div");
+      categoryDiv.classList.add("category");
+
+      const button = document.createElement("button");
+      button.classList.add("category-btn");
+      button.setAttribute("onclick", `toggleDropdown('${categoriaId}')`);
+      // usando o nome da categoria obtido do cache, se não encontrado, usa "Sem Categoria"
+      const categoriaNome = categoriasCache[categoriaId] || "Sem Categoria";
+      button.innerHTML = `${categoriaNome} <span class="arrow">▾</span>`;
+      categoryDiv.appendChild(button);
+
+      const contentDiv = document.createElement("div");
+      contentDiv.id = categoriaId;
+      contentDiv.classList.add("category-content");
+      contentDiv.style.display = "none";
+
+      const ul = document.createElement("ul");
+      ul.classList.add("subcategory");
+
+      servicos.forEach((servico) => {
+        const li = document.createElement("li");
+        li.style.display = "flex";
+        li.style.justifyContent = "space-between";
+        li.style.alignItems = "center";
+
+        li.innerHTML = `
+          <span style="flex: 1; text-align: left;">${servico.nome}</span>
+          <span style="flex: 1; text-align: center;">R$ ${parseFloat(servico.valor)
+            .toFixed(2)
+            .replace(".", ",")}</span>
+          <span style="flex: 1; text-align: right;">
+            <button class="remove-button" onclick="removeService(${servico.valor}, '${servico.nome}')">-</button>
+            <button class="add-button" onclick="addService(${servico.valor}, '${servico.nome}')">+</button>
+          </span>
+        `;
+        ul.appendChild(li);
+      });
+
+      contentDiv.appendChild(ul);
+      categoryDiv.appendChild(contentDiv);
+      container.appendChild(categoryDiv);
+    });
+  } catch (error) {
+    console.error("Erro ao carregar os serviços:", error);
+    container.innerHTML = "<p>Erro ao carregar os serviços.</p>";
   }
-  updateUI();
+}
+
+function addService(preco, nome) {
+  if( services.length < 11){
+    total += preco;
+    services.push({ nome: nome, preco: preco });
+    updateUI();
+  } else if( services.length >= 11){
+    alert("Não é possivel adicionar mais servicos") // pode mudar a forma de mostrar o limitador de serviço
+  }
+  
+}
+
+function removeService(preco, nome) {
+  if(!services.length){
+    
+    } else{
+      total -= preco;
+      const index = services.findIndex(
+        (service) => service.nome === nome && service.preco === preco
+      );
+      if (index > -1) {
+        services.splice(index, 1);
+      }
+      updateUI();
+  }
 }
 
 function updateUI() {
@@ -78,59 +163,6 @@ function toggleDropdown(category) {
   content.style.display = content.style.display === "block" ? "none" : "block";
 }
 
-function generateHTML() {
-  const container = document.getElementById("servicos-container");
-  const categorias = [...new Set(servicos.map((servico) => servico.categoria))];
-
-  categorias.forEach((categoria) => {
-    const categoryDiv = document.createElement("div");
-    categoryDiv.classList.add("category");
-
-    const button = document.createElement("button");
-    button.classList.add("category-btn");
-    button.setAttribute("onclick", `toggleDropdown('${categoria}')`);
-    button.innerHTML = `${categoria} <span class="arrow">▾</span>`;
-    categoryDiv.appendChild(button);
-
-    const contentDiv = document.createElement("div");
-    contentDiv.id = categoria;
-    contentDiv.classList.add("category-content");
-    contentDiv.style.display = "none";
-
-    const ul = document.createElement("ul");
-    ul.classList.add("subcategory");
-
-    servicos
-      .filter((servico) => servico.categoria === categoria)
-      .forEach((servico) => {
-        const li = document.createElement("li");
-        li.style.display = "flex";
-        li.style.justifyContent = "space-between";
-        li.style.alignItems = "center";
-
-        li.innerHTML = `
-        <span style="flex: 1; text-align: left;">${servico.nome}</span>
-        <span style="flex: 1; text-align: center;">R$ ${servico.preco
-          .toFixed(2)
-          .replace(".", ",")}</span>
-        <span style="flex: 1; text-align: right;">
-          <button class="remove-button" onclick="removeService(${
-            servico.preco
-          }, '${servico.nome}')">-</button>
-          <button class="add-button" onclick="addService(${servico.preco}, '${
-          servico.nome
-        }')">+</button>
-        </span>
-      `;
-        ul.appendChild(li);
-      });
-
-    contentDiv.appendChild(ul);
-    categoryDiv.appendChild(contentDiv);
-    container.appendChild(categoryDiv);
-  });
-}
-
 function cancelarAgendamento() {
   total = 0;
   services.length = 0;
@@ -138,3 +170,6 @@ function cancelarAgendamento() {
 }
 
 document.addEventListener("DOMContentLoaded", generateHTML);
+
+
+
