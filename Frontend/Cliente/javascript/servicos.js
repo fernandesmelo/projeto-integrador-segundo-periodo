@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
   // Recupera o objeto 'cliente' do localStorage
   const cliente = JSON.parse(localStorage.getItem('cliente'));
@@ -17,35 +15,49 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error('Cliente não encontrado no localStorage ou atributo nome está ausente.');
   }
+
+  // Recupera os dados de serviços e total do localStorage
+  const savedData = JSON.parse(localStorage.getItem('selectedServices'));
+  if (savedData) {
+    services = savedData.services || [];
+    total = savedData.total || 0;
+    updateUI(); // Atualiza a interface com os dados recuperados
+  }
+
+  // Gera o HTML dos serviços
+  generateHTML();
 });
-let services = []; 
+
+let services = [];
 let total = 0;
 
-let categoriasCache = {}; // cache para armazenar as categorias no navegador local
+let categoriasCache = {}; // Cache para armazenar as categorias no navegador local
+
+const servicesKey = 'selectedServices'; // Chave para armazenar os serviços no localStorage
+const totalKey = 'totalValue'; // Chave para armazenar o valor total no localStorage
 
 async function generateHTML() {
   const container = document.getElementById("servicos-container");
-  container.innerHTML = "<p>Carregando...</p>"; // exibe um estado de carregamento aguardando a requisição
+  container.innerHTML = "<p>Carregando...</p>"; // Exibe um estado de carregamento aguardando a requisição
 
   try {
-    // requisição das categorias
+    // Requisição das categorias
     const categoriasResponse = await fetch("http://localhost:8080/salaosenac/categorias"); 
     if (!categoriasResponse.ok) {
       throw new Error("Erro ao carregar as categorias");
     }
-    
-    const categorias = await categoriasResponse.json();
-    console.log("Categorias recebidas:", categorias)
 
-    // guardando as categorias em um cache para facilitar a busca pelo nome
+    const categorias = await categoriasResponse.json();
+    console.log("Categorias recebidas:", categorias);
+
+    // Guardando as categorias em um cache para facilitar a busca pelo nome
     categorias.forEach((categoria) => {
-      categoriasCache[categoria.idCategoria] = categoria.nome; // transformando cada  categoria.idCategoria em chave e passando seu nome como valor
+      categoriasCache[categoria.idCategoria] = categoria.nome; // Transformando cada categoria.idCategoria em chave e passando seu nome como valor
     });
 
-    console.log(categoriasCache); //verificando se deu certo
+    console.log(categoriasCache); // Verificando se deu certo
 
-
-    // requisição para os serviços
+    // Requisição para os serviços
     const servicosResponse = await fetch("http://localhost:8080/salaosenac/servicos"); 
     if (!servicosResponse.ok) {
       throw new Error("Erro ao carregar os serviços");
@@ -53,21 +65,21 @@ async function generateHTML() {
 
     const servicos = await servicosResponse.json();
 
-    // agrupando os serviços por categoria
+    // Agrupando os serviços por categoria
     const categoriasAgrupadas = servicos.reduce((acc, servico) => {
       const categoriaId = servico.categoriaId || "Categoria nao encontrada";
       if (!acc[categoriaId]) {
         acc[categoriaId] = [];
       }
       acc[categoriaId].push(servico);
-      console.log(categoriaId)
+      console.log(categoriaId);
       return acc;
     }, {});
 
-    // limpando o container
+    // Limpando o container
     container.innerHTML = "";
 
-    // renderizando as categorias e serviços
+    // Renderizando as categorias e serviços
     Object.entries(categoriasAgrupadas).forEach(([categoriaId, servicos]) => {
       const categoryDiv = document.createElement("div");
       categoryDiv.classList.add("category");
@@ -75,7 +87,7 @@ async function generateHTML() {
       const button = document.createElement("button");
       button.classList.add("category-btn");
       button.setAttribute("onclick", `toggleDropdown('${categoriaId}')`);
-      // usando o nome da categoria obtido do cache, se não encontrado, usa "Sem Categoria"
+      // Usando o nome da categoria obtido do cache, se não encontrado, usa "Sem Categoria"
       const categoriaNome = categoriasCache[categoriaId] || "Sem Categoria";
       button.innerHTML = `${categoriaNome} <span class="arrow">▾</span>`;
       categoryDiv.appendChild(button);
@@ -100,8 +112,8 @@ async function generateHTML() {
             .toFixed(2)
             .replace(".", ",")}</span>
           <span style="flex: 1; text-align: right;">
-            <button class="remove-button" onclick="removeService(${servico.valor}, '${servico.nome}')">-</button>
-            <button class="add-button" onclick="addService(${servico.valor}, '${servico.nome}')">+</button>
+            <button class="remove-button" onclick="removeService(${servico.valor}, '${servico.nome}', '${servico.idServico}')">-</button>
+            <button class="add-button" onclick="addService(${servico.valor}, '${servico.nome}', '${servico.idServico}')">+</button>
           </span>
         `;
         ul.appendChild(li);
@@ -117,29 +129,28 @@ async function generateHTML() {
   }
 }
 
-function addService(preco, nome) {
-  if( services.length < 11){
+function addService(preco, nome, idServico) {
+  if (services.length < 11) {
     total += preco;
-    services.push({ nome: nome, preco: preco });
+    services.push({ nome: nome, preco: preco, idServico: idServico });
     updateUI();
-  } else if( services.length >= 11){
-    alert("Não é possivel adicionar mais servicos") // pode mudar a forma de mostrar o limitador de serviço
+    saveToLocalStorage(); // Salva no localStorage após adicionar
+  } else if (services.length >= 11) {
+    alert("Não é possível adicionar mais serviços");
   }
-  
 }
 
-function removeService(preco, nome) {
-  if(!services.length){
-    
-    } else{
-      total -= preco;
-      const index = services.findIndex(
-        (service) => service.nome === nome && service.preco === preco
-      );
-      if (index > -1) {
-        services.splice(index, 1);
-      }
-      updateUI();
+function removeService(preco, nome, idServico) {
+  if (services.length > 0) {
+    total -= preco;
+    const index = services.findIndex(
+      (service) => service.nome === nome && service.preco === preco && service.idServico === idServico
+    );
+    if (index > -1) {
+      services.splice(index, 1);
+    }
+    updateUI();
+    saveToLocalStorage(); // Salvar no localStorage
   }
 }
 
@@ -158,6 +169,13 @@ function updateUI() {
   });
 }
 
+function saveToLocalStorage() {
+  // Salvar serviços no localStorage
+  localStorage.setItem(servicesKey, JSON.stringify(services));
+  // Salvar total no localStorage
+  localStorage.setItem(totalKey, total.toFixed(2));
+}
+
 function toggleDropdown(category) {
   const content = document.getElementById(category);
   content.style.display = content.style.display === "block" ? "none" : "block";
@@ -167,9 +185,7 @@ function cancelarAgendamento() {
   total = 0;
   services.length = 0;
   updateUI();
+  localStorage.removeItem('selectedServices'); // Limpa os dados no localStorage
 }
 
 document.addEventListener("DOMContentLoaded", generateHTML);
-
-
-

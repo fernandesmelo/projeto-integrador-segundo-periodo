@@ -7,26 +7,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/confirmacao-agendamento.css">
 </head>
-<body>
+<body onload="carregarDados()">
     <div class="container">
         <h2>Confirme seu agendamento</h2>
         <div class="summary">
-            <p><strong>Data:</strong> 30/10/2024</p>
-            <p><strong>Horário:</strong> 14:00</p>
-            <p><strong>Serviços:</strong></p>
-            <ul>
-                <li>Cabeleleiro: Corte Feminino R$ 65,00</li>
-                <li>Manicure e Pedicure: Manicure R$ 23,00</li>
-                <li>Estética: Limpeza de Pele R$ 85,00</li>
-                <li>Depilação com Cera: Axilas R$ 24,00</li>
-            </ul>
-            <p><strong>Total:</strong> R$ 197,00</p>
+            <p><strong>Data:</strong> <span id="agendamento-data">--</span></p>
+            <p><strong>Horário:</strong> <span id="agendamento-horario">--</span></p>
+            <p><strong>Profissional:</strong> <span id="agendamento-profissional">--</span></p>
+            <p><strong id="servicos-title">Serviços:</strong></p>
+            <ul id="lista-servicos"></ul>
+            <p><strong>Total:</strong> R$ <span id="agendamento-total">0,00</span></p>
         </div>
-        <a href="#" class="button" onclick="confirmarAgendamento()">Confirmar</a>
-        <a href="../html/servicos.html" class="button-sair">Sair</a>
+        <a href="#" id="confirmar-agendamento-btn" class="button btn btn-success" onclick="confirmarAgendamento()">Confirmar</a>
+        <a href="../html/servicos.html" class="button-sair btn btn-secondary">Sair</a>
     </div>
-    <div class="modal fade" id="confirmacaoModal" tabindex="-1" aria-labelledby="confirmacaoModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="confirmacaoModal" tabindex="-1" aria-labelledby="confirmacaoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -44,7 +39,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    <button type="button"  id= "fechar" class="btn btn-primary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>

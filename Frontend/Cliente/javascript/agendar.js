@@ -68,6 +68,10 @@ $(document).ready(function () {
     },
   });
 
+  function saveToLocalStorage(key, value) {
+    localStorage.setItem(key, value);
+  }
+
   function updateAvailableTimes(date) {
     const timesList = document.getElementById("times-list");
     timesList.innerHTML = "";
@@ -83,6 +87,7 @@ $(document).ready(function () {
       };
       timesList.appendChild(button);
     });
+    saveToLocalStorage("selectedDate", date);
 
     document.getElementById("available-times").style.display = "block";
     document.getElementById("available-professionals-container").style.display = "block";
@@ -93,12 +98,14 @@ $(document).ready(function () {
     buttons.forEach((button) => button.classList.remove("selected-time"));
     event.target.classList.add("selected-time");
     selectedTime = time;
+    saveToLocalStorage("selectedTime", selectedTime);
     updateSummary();
   }
 
   // lógica do botão "sim"
   document.getElementById("choose-professional-yes").onclick = function () {
     chooseProfessional = true;
+    fetchProfessionals(); // Agora a função está acessível globalmente
 
     // adiciona a classe "active" do botão "Sim" e remove do "Não"
     this.classList.add("active");
@@ -106,7 +113,7 @@ $(document).ready(function () {
 
     document.getElementById("professional-dropdown").style.display = "block";
     updateSummary();
-  };
+};
 
   // lógica do botão não
   document.getElementById("choose-professional-no").onclick = function () {
@@ -121,36 +128,105 @@ $(document).ready(function () {
     updateSummary();
   };
 
-  // capturar seleção do profissional
-  document.getElementById("professionals-list").addEventListener("change", function () {
-    selectedProfessional = this.options[this.selectedIndex].text;
-    updateSummary();
+ // Função para buscar os profissionais
+ async function fetchProfessionals() {
+  try {
+      const response = await fetch("http://localhost:8080/salaosenac/funcionarios");
+      console.log('ok');
+      if (!response.ok) {
+          throw new Error("Erro ao buscar os profissionais. Código: " + response.status);
+      }
+      const professionals = await response.json();
+
+      // Salvar os profissionais no localStorage
+      const professionalsCache = {};
+      professionals.forEach((professional) => {
+          professionalsCache[professional.idFuncionario] = professional.nome; // ID como chave, nome como valor
+      });
+      localStorage.setItem("professionals", JSON.stringify(professionalsCache));
+
+      // Atualizar o dropdown
+      updateDropdown(professionals);
+  } catch (error) {
+      console.error("Erro ao carregar profissionais:", error);
+      alert("Não foi possível carregar a lista de profissionais. Tente novamente mais tarde.");
+  }
+}
+
+// Função para atualizar o dropdown com os profissionais
+function updateDropdown(professionals) {
+  const professionalsList = document.getElementById("professionals-list");
+  professionalsList.innerHTML = `
+      <option value="" disabled selected>Selecione um profissional</option>
+  `;
+
+  professionals.forEach((professional) => {
+      const option = document.createElement("option");
+      option.value = professional.idFuncionario; // Use o ID do profissional
+      option.textContent = professional.nome; // Use o nome do profissional
+      professionalsList.appendChild(option);
   });
 
-  // atualiza resumo do agendamento
-  function updateSummary() {
-    const summaryElement = document.getElementById("summary");
-    const finalizeButton = document.getElementById("finalize-button");
+  // Adiciona evento para capturar a seleção do profissional
+  professionalsList.addEventListener("change", (event) => {
+      const selectedId = event.target.value;
+      const selectedName = event.target.options[event.target.selectedIndex].text;
 
-    // atualiza conteúdo do resumo
-    let summaryHtml = `
+      selectedProfessional = { id: selectedId, nome: selectedName };
+      localStorage.setItem("selectedProfessional", JSON.stringify(selectedProfessional)); // Armazena o profissional selecionado
+      updateSummary(); 
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const chooseProfessionalYesButton = document.getElementById("choose-professional-yes");
+  chooseProfessionalYesButton.addEventListener("click", () => {
+      // Exibir o dropdown de profissionais e buscar os dados
+      document.getElementById("professional-dropdown").style.display = "block";
+      fetchProfessionals();
+  });
+});
+
+// Função para atualizar o resumo
+function updateSummary() {
+  const summaryElement = document.getElementById("summary");
+  const finalizeButton = document.getElementById("finalize-button");
+  const selectedServices = JSON.parse(localStorage.getItem("selectedServices")) || [];
+  const totalValue = localStorage.getItem("totalValue") || 0;
+
+
+  
+  let summaryHtml = `
       <h2>Resumo do Agendamento</h2>
       <p><strong>Data:</strong> ${selectedDate || "Não selecionada"}</p>
       <p><strong>Horário:</strong> ${selectedTime || "Não selecionado"}</p>
+  `;
+  if (selectedServices.length > 0) {
+    summaryHtml += `
+      <p><strong>${selectedServices.length > 1 ? "Serviços Escolhidos" : "Serviço Escolhido"}:</strong></p>
+      <ul>
+        ${selectedServices.map(service => `<li>${service.nome}</li>`).join("")}
+      </ul>
     `;
-    if (chooseProfessional && selectedProfessional) {
-      summaryHtml += `<p><strong>Profissional:</strong> ${selectedProfessional}</p>`;
-    }
-    summaryElement.innerHTML = summaryHtml;
+    summaryHtml += `<p><strong>Valor Total:</strong> R$ ${parseFloat(totalValue).toFixed(2)}</p>`;
+  } else {
+    summaryHtml += `<p><strong> Serviços Escolhidos:</strong> Nenhum serviço selecionado</p>`;
+  }
 
-    // exibi ou oculta o botão de agendar
-    if (selectedDate && selectedTime && (!chooseProfessional || selectedProfessional)) {
+  if (selectedProfessional) {
+      summaryHtml += `<p><strong>Profissional:</strong> ${selectedProfessional.nome}</p>`;
+  }
+  summaryElement.innerHTML = summaryHtml;
+
+  // Exibe ou oculta o botão de agendar
+  if (selectedDate && selectedTime) {
       summaryElement.style.display = "block";
       finalizeButton.style.display = "block";
-    } else {
+  } else {
       finalizeButton.style.display = "none";
-    }
   }
+}
+
 
   document.getElementById("finalize-button").onclick = function () {
     window.location.href = "./confirmacaoagendamento.html";
