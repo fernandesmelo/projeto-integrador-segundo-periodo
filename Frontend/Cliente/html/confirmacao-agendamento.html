@@ -19,7 +19,7 @@
             <p><strong>Total:</strong> R$ <span id="agendamento-total">0,00</span></p>
         </div>
         <a href="#" id="confirmar-agendamento-btn" class="button btn btn-success" onclick="confirmarAgendamento()">Confirmar</a>
-        <a href="../html/servicos.html" class="button-sair btn btn-secondary">Sair</a>
+        <a href="../html/servicos.html" id="sair" class="button-sair btn btn-secondary">Sair</a>
     </div>
     <div class="modal fade" id="confirmacaoModal" tabindex="-1" aria-labelledby="confirmacaoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -28,10 +28,7 @@
                     <h5 class="modal-title" id="confirmacaoModalLabel">
                         <i class="fas fa-check-circle" style="color: green; margin-right: 8px;"></i>
                         Agendamento Confirmado
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    </h5>               
                 </div>
                 <div class="modal-body text-center">
                     <div class="alert alert-success">
