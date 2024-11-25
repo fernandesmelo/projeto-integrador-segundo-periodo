@@ -23,6 +23,14 @@ body {
   color: #003f80;
 }
 
+.navbar-brand {
+  font-size: 15px;
+}
+
+.imagem-navbar {
+  padding-right: 5px;
+}
+
 .navbar .dropdown-item {
   color: #0051A0;
   font-weight: bold;
