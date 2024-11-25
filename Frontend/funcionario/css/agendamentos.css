@@ -13,10 +13,12 @@ body {
   padding: 20px;
 }
 
-.sidebar h2 {
+.imagem-menu {
+  width: 60%;
   text-align: center;
   margin-bottom: 30px;
 }
+
 
 .sidebar ul {
   list-style-type: none;
