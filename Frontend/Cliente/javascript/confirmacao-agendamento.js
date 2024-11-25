@@ -1,11 +1,11 @@
-
+document.getElementById('sair')
 
 function getServicosIds() {
   const servicos = JSON.parse(localStorage.getItem('selectedServices')); // Recupera os serviços armazenados
   if (!servicos || !Array.isArray(servicos)) {
     return []; // Retorna uma lista vazia se não houver serviços armazenados
   }
-  return servicos.map(servico => servico.idServico); // Extrai apenas os IDs dos serviços
+  return servicos.map(servico => parseInt(servico.idServico)); // Extrai apenas os IDs dos serviços
 }
 
 function getServicosNomes() {
@@ -36,9 +36,13 @@ const dados = {
   data: data, 
   horario: localStorage.getItem('selectedTime'),
   valorTotal: parseFloat(localStorage.getItem('totalValue')),
-  idProfissional: JSON.parse(localStorage.getItem("selectedProfessional"))?.id || null, 
-  servicosIds: getServicosIds()
+  idFuncionario: JSON.parse(localStorage.getItem("selectedProfessional"))?.id
+  ? parseInt(JSON.parse(localStorage.getItem("selectedProfessional")).id, 10) // especificando a base decimal para o parseint interpretar corretamente 
+  : null,
+  servicoIds: getServicosIds()
 };
+
+console.log(dados); 
 
 
         
@@ -67,6 +71,8 @@ function carregarDados() {
       listaServicos.appendChild(li);
   });
 }
+
+document.getElementById('sair').addEventListener('click', limparLocalStorage);
 
 function limparLocalStorage() {
   localStorage.removeItem('selectedDate');
@@ -107,6 +113,7 @@ function confirmarAgendamento() {
             // Exibir o modal de confirmação apenas quando a resposta for bem-sucedida
             $("#confirmacaoModal").modal("show");
             limparLocalStorage();
+            console.log("ok")
             
             // Adiciona um evento ao botão "Fechar" do modal para redirecionar
             const fecharBtn = document.getElementById('fechar');
@@ -133,6 +140,7 @@ function confirmarAgendamento() {
     });
   }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
