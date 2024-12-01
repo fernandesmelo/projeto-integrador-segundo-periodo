@@ -45,6 +45,8 @@ function carregarAgendamentos() {
         return;
       }
 
+      console.log(agendamentos);
+
       const contentDiv = document.querySelector('.content .row');
       contentDiv.innerHTML = ''; // Limpa o conteúdo anterior
 
@@ -53,22 +55,22 @@ function carregarAgendamentos() {
           <div class="col-md-4">
             <div class="card">
               <div class="card-header">
-                <span>Cliente: ${agendamento.nomecliente}</span>
+                <span>Cliente: ${agendamento.nomeCliente}</span>
               </div>
               <div class="card-body">
                 <div class="info-agendamento">
                   <strong>Data:</strong> ${new Date(agendamento.data).toLocaleDateString()}<br>
                   <strong>Horário:</strong> ${agendamento.horario}<br>
-                  <strong>Profissional:</strong> ${agendamento.nomefuncionario}<br>
+                  <strong>Profissional:</strong> ${agendamento.nomeFuncionario}<br>
                   <strong>Serviços:</strong>
                   <ul>
-                    <li>${agendamento.servicosassociados}</li>
+                    <li>${agendamento.servicosAssociados}</li>
                   </ul>
-                  <strong>Total:</strong> R$ ${agendamento.valortotal}
+                  <strong>Total:</strong> R$ ${agendamento.valorTotal}
                 </div>
                 <div style="margin-top: 30px;">
-                  <a href="#" class="btn-secondary-action reagendar-agendamento" data-id="${agendamento.idagendamento}">Reagendar</a>
-                  <a href="#" class="btn-action cancelar-agendamento" data-id="${agendamento.idagendamento}">Cancelar</a>
+                  <a href="#" class="btn-secondary-action reagendar-agendamento" data-id="${agendamento.idAgendamento}">Reagendar</a>
+                  <a href="#" class="btn-action cancelar-agendamento" data-id="${agendamento.idAgendamento}">Cancelar</a>
                 </div>
               </div>
             </div>
