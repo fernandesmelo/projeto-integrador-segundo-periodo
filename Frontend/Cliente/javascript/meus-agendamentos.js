@@ -49,26 +49,29 @@ function carregarAgendamentos() {
       contentDiv.innerHTML = ''; // Limpa o conteúdo anterior
 
       agendamentos.forEach((agendamento) => {
+        // Verifica se o nome do profissional é nulo ou undefined
+        const nomeProfissional = agendamento.nomefuncionario ? agendamento.nomefuncionario : 'Profissional não selecionado';
+
         const cardHtml = `
           <div class="col-md-4">
             <div class="card">
               <div class="card-header">
-                <span>Cliente: ${agendamento.nomeCliente}</span>
+                <span>Cliente: ${agendamento.nomecliente}</span>
               </div>
               <div class="card-body">
                 <div class="info-agendamento">
                   <strong>Data:</strong> ${new Date(agendamento.data).toLocaleDateString()}<br>
                   <strong>Horário:</strong> ${agendamento.horario}<br>
-                  <strong>Profissional:</strong> ${agendamento.nomeFuncionario}<br>
+                  <strong>Profissional:</strong> ${nomeProfissional}<br>
                   <strong>Serviços:</strong>
                   <ul>
-                    <li>${agendamento.servicosAssociados}</li>
+                    <li>${agendamento.servicosassociados}</li>
                   </ul>
-                  <strong>Total:</strong> R$ ${agendamento.valorTotal}
+                  <strong>Total:</strong> R$ ${agendamento.valortotal}
                 </div>
                 <div style="margin-top: 30px;">
-                  <a href="#" class="btn-secondary-action reagendar-agendamento" data-id="${agendamento.idAgendamento}">Reagendar</a>
-                  <a href="#" class="btn-action cancelar-agendamento" data-id="${agendamento.idAgendamento}">Cancelar</a>
+                  <a href="#" class="btn-secondary-action reagendar-agendamento" data-id="${agendamento.idagendamento}">Reagendar</a>
+                  <a href="#" class="btn-action cancelar-agendamento" data-id="${agendamento.idagendamento}">Cancelar</a>
                 </div>
               </div>
             </div>
@@ -100,6 +103,7 @@ function carregarAgendamentos() {
       console.error('Erro ao carregar agendamentos:', error);
     });
 }
+
 
 function mostrarFormularioReagendamento(cardElement, agendamentoId) {
   const infoAgendamento = cardElement.querySelector('.info-agendamento');
