@@ -49,9 +49,6 @@ function carregarAgendamentos() {
       contentDiv.innerHTML = ''; // Limpa o conteúdo anterior
 
       agendamentos.forEach((agendamento) => {
-        // Verifica se o nome do profissional é nulo ou undefined
-        const nomeProfissional = agendamento.nomefuncionario ? agendamento.nomefuncionario : 'Profissional não selecionado';
-
         const cardHtml = `
           <div class="col-md-4">
             <div class="card">
@@ -62,7 +59,7 @@ function carregarAgendamentos() {
                 <div class="info-agendamento">
                   <strong>Data:</strong> ${new Date(agendamento.data).toLocaleDateString()}<br>
                   <strong>Horário:</strong> ${agendamento.horario}<br>
-                  <strong>Profissional:</strong> ${nomeProfissional}<br>
+                  <strong>Profissional:</strong> ${agendamento.nomefuncionario}<br>
                   <strong>Serviços:</strong>
                   <ul>
                     <li>${agendamento.servicosassociados}</li>
