@@ -186,10 +186,10 @@ async function confirmarReagendamento(agendamentoId, novaData, novoHorario, idPr
     });
 
     if (response.ok) {
-      alert('Agendamento reagendado com sucesso!');
+      alert('Atualizado com sucesso!');
       carregarAgendamentos(); // Recarrega os cartões após atualizar
     } else {
-      alert('Erro ao reagendar. Tente novamente.');
+      alert('Erro ao atualizar. Tente novamente.');
     }
   } catch (error) {
     console.error('Erro ao enviar requisição:', error);

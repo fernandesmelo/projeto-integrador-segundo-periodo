@@ -61,7 +61,7 @@ document
 
     try {
       // Enviar os dados para o backend
-      const response = await fetch("http://localhost:8080/salaosenac/funcionarios", {
+      const response = await fetch("http://localhost:8080/salaosenac/funcionario/cadastro", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
