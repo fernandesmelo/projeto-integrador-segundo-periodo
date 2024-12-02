@@ -40,27 +40,21 @@
                     <option value="Outro">Outro</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email"  class="form-control" id="email" required>
+            </div>
+
             <div class="form-group">
                 <label for="especialidades">Especialidades:</label>
                 <select multiple class="form-control" id="especialidades" required>
-                    <option value="Cabeleireiro">Cabeleireiro(a)</option>
-                    <option value="Manicure">Manicure e Pedicure</option>
-                    <option value="Esteticista">Esteticista</option>
-                    <option value="Barbeiro">Depiladora</option>
+                    
                 </select>
                 <small class="form-text text-muted">Segure Ctrl para selecionar múltiplas especialidades.</small>
             </div>
-            <div class="form-group">
-                <label for="sexo">Horário:</label>
-                <select class="form-control" id="horario" required>
-                    <option value="">Selecione</option>
-                    <option value="Masculino">08:00 - 18:00</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="nome">Folga:</label>
-                <input type="text" class="form-control" id="folga" required>
-            </div>
+            
+            
             <button type="submit" class="btn btn-primary" id="button-cadastrar">Cadastrar</button>
         </form>
     </div>
@@ -68,5 +62,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
