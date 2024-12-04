@@ -3,49 +3,49 @@ function toggleMenu() {
   sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
 }
 
-const professionals = [
-  {
-    foto: "../arquivos/imagens/cabeleleira.jpeg",
-    nome: "Maria Silva",
-    especialidade: "Cabeleireira",
-    horario: "08:00 - 18:00",
-    folga: "Segunda-feira",
-  },
-  {
-    foto: "../arquivos/imagens/esteticista.jpeg",
-    nome: "Lucas Ribeiro",
-    especialidade: "Esteticista",
-    horario: "08:00 - 18:00",
-    folga: "Terça-feira",
-  },
-  {
-    foto: "../arquivos/imagens/manicure-pedicure.jpeg",
-    nome: "Maria Clara",
-    especialidade: "Manicure e Pedicure",
-    horario: "08:00 - 18:00",
-    folga: "Quarta-feira",
-  },
-  {
-    foto: "../arquivos/imagens/depiladora.jpeg",
-    nome: "Júlia Novais",
-    especialidade: "Depiladora",
-    horario: "08:00 - 18:00",
-    folga: "Segunda-feira",
-  },
-];
-
-function exibirProfissionais() {
+async function exibirProfissionais() {
   const tabela = document.getElementById("professionalsTable");
-  professionals.forEach((prof) => {
-    const row = `<tr>
-                        <td><img src="${prof.foto}" alt="${prof.nome}"></td>
-                        <td>${prof.nome}</td>
-                        <td>${prof.especialidade}</td>
-                        <td>${prof.horario}</td>
-                        <td>${prof.folga}</td>
-                    </tr>`;
-    tabela.innerHTML += row;
-  });
+
+  try {
+    const response = await fetch("http://localhost:8080/salaosenac/funcionarios/especialidade");
+    if (response.ok) {
+      const data = await response.json();
+
+      // Extrai apenas a primeira parte da resposta
+      const profissionais = data[0];
+
+      // Agrupa categorias por idFuncionario
+      const profissionaisAgrupados = {};
+
+      profissionais.forEach((prof) => {
+        if (!profissionaisAgrupados[prof.idFuncionario]) {
+          profissionaisAgrupados[prof.idFuncionario] = {
+            nome: prof.nome,
+            categorias: [],
+          };
+        }
+        profissionaisAgrupados[prof.idFuncionario].categorias.push(prof.categoria);
+      });
+
+      // Itera sobre o objeto de profissionais agrupados
+      Object.values(profissionaisAgrupados).forEach((prof) => {
+        const row = `
+          <tr>
+            <td>${prof.nome}</td>
+            <td>${prof.categorias.join(", ")}</td>
+          </tr>
+        `;
+        tabela.innerHTML += row;
+      });
+    } else {
+      console.error("Erro ao buscar profissionais:", response.statusText);
+      tabela.innerHTML = `<tr><td colspan="2">Erro ao carregar profissionais</td></tr>`;
+    }
+  } catch (error) {
+    console.error("Erro ao conectar ao servidor para buscar profissionais:", error);
+    tabela.innerHTML = `<tr><td colspan="2">Erro ao conectar ao servidor</td></tr>`;
+  }
 }
 
-exibirProfissionais();
+document.addEventListener("DOMContentLoaded", exibirProfissionais);
+
