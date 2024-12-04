@@ -10,138 +10,28 @@
 <body>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <nav class="sidebar">
-        <div class="container-imagem">
-            <img class="imagem-menu" src="../arquivos/imagens/logo-senac-sem-fundo.png" alt="Logo Senac">
-        </div>
-        <ul>
-            <li><a href="../html/agendamentos.html">Agendamentos</a></li>
-            <li><a href="../html/clientes.html">Clientes</a></li>
-            <li><a href="../html/profissionais.html">Profissionais</a></li>
-            <li><a href="#">Configurações</a></li>
-            <li><a href="../../cliente/index.html">Sair</a></li>
-        </ul>
+      <div class="container-imagem">
+        <img class="imagem-menu" src="../arquivos/imagens/logo-senac-sem-fundo.png" alt="Logo Senac">
+      </div>
+      <ul>
+        <li><a href="../html/agendamentos.html">Agendamentos</a></li>
+        <li><a href="../html/clientes.html">Clientes</a></li>
+        <li><a href="../html/profissionais.html">Profissionais</a></li>
+        <li><a href="#">Configurações</a></li>
+        <li><a href="../../cliente/index.html">Sair</a></li>
+      </ul>
     </nav>
     <div class="content">
-        <header>
-            <div class="welcome-text">Clientes Cadastrados</div>
-            <a href="../html/cadastro-cliente.html"><button class="btn btn-primary"
-                    id="button-cdastrar-cliente">Cadastrar Cliente</button></a>
-        </header>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <span>Nome: Maria Souza</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>CPF:</strong> 123.456.789-00</p>
-                        <p><strong>Telefone:</strong> (81) 99587-2365</p>
-                        <p><strong>E-mail:</strong> mariasouza@gmail.com</p>
-                        <p><strong>Data de Nascimento:</strong> 01/01/1990</p>
-                        <p><strong>Aluno SENAC:</strong> Sim</p>
-                        <a href="cadastroclientes.html" class="btn-edit" id="button-editar">Editar</a>
-                        <a href="#" class="btn-action">Excluir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <span>Nome: Carlos Lima</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>CPF:</strong> 987.654.321-00</p>
-                        <p><strong>Telefone:</strong> (81) 98587-2365</p>
-                        <p><strong>E-mail:</strong> carloslima@gmail.com</p>
-                        <p><strong>Data de Nascimento:</strong> 02/02/1985</p>
-                        <p><strong>Aluno SENAC:</strong> Não</p>
-                        <a href="cadastroclientes.html" class="btn-edit">Editar</a>
-                        <a href="#" class="btn-action">Excluir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <span>Nome: Paula Oliveira</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>CPF:</strong> 321.654.987-00</p>
-                        <p><strong>Telefone:</strong> (81) 97587-2365</p>
-                        <p><strong>E-mail:</strong> paulaoliveira@gmail.com</p>
-                        <p><strong>Data de Nascimento:</strong> 03/03/1995</p>
-                        <p><strong>Aluno SENAC:</strong> Sim</p>
-                        <a href="cadastroclientes.html" class="btn-edit">Editar</a>
-                        <a href="#" class="btn-action">Excluir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <span>Nome: Solange Couto</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>CPF:</strong> 321.654.987-00</p>
-                        <p><strong>Telefone:</strong> (81) 96587-2365</p>
-                        <p><strong>E-mail:</strong> solangecouto@gmail.com</p>
-                        <p><strong>Data de Nascimento:</strong> 08/03/1978</p>
-                        <p><strong>Aluno SENAC:</strong> Não</p>
-                        <a href="cadastroclientes.html" class="btn-edit">Editar</a>
-                        <a href="#" class="btn-action">Excluir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <span>Nome: Pablo Dias</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>CPF:</strong> 321.654.987-00</p>
-                        <p><strong>Telefone:</strong> (81) 95587-2365</p>
-                        <p><strong>E-mail:</strong> pablodias@gmail.com</p>
-                        <p><strong>Data de Nascimento:</strong> 18/05/1999</p>
-                        <p><strong>Aluno SENAC:</strong> Sim</p>
-                        <a href="cadastroclientes.html" class="btn-edit">Editar</a>
-                        <a href="#" class="btn-action">Excluir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <span>Nome: Rosangela Siqueira</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>CPF:</strong> 321.654.987-00</p>
-                        <p><strong>Telefone:</strong> (81) 95587-2365</p>
-                        <p><strong>E-mail:</strong> rosangelasiqueira@gmail.com</p>
-                        <p><strong>Data de Nascimento:</strong> 04/04/2002</p>
-                        <p><strong>Aluno SENAC:</strong> Sim</p>
-                        <a href="cadastroclientes.html" class="btn-edit">Editar</a>
-                        <a href="#" class="btn-action">Excluir</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Próximo</a>
-                </li>
-            </ul>
-        </nav>
+      <header>
+        <div class="welcome-text">Clientes Cadastrados</div>
+        <a href="../html/cadastro-cliente.html"><button class="btn btn-primary" id="button-cadastrar-cliente">Cadastrar Cliente</button></a>
+      </header>
+      <div class="row" id="clientes-list"></div>
     </div>
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../javascript/clientes.js"></script>
-</body>
+  </body>
 </html>
