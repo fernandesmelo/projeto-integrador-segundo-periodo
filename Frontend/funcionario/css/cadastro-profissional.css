@@ -12,6 +12,18 @@ body {
   border-color: #008D4C;
 }
 
+.container-imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-menu {
+  width: 60%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 200px) and (max-width: 762px) {
   body {
     display: flex;
