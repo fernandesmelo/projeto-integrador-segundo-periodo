@@ -7,9 +7,9 @@ body {
 
 .navbar {
   background-color: rgba(255, 255, 255, 0.6);
-  position: fixed;
+  position: fixed !important;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 
 .navbar .nav-link,
@@ -52,7 +52,6 @@ body {
 .carousel-inner img {
   height: 400px;
   object-fit: cover;
-  margin: 0;
 }
 
 .titulo {
