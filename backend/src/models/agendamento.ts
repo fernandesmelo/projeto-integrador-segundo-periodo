@@ -21,7 +21,7 @@ export class Agendamento {
     @Column({ type: 'time' })
     horario: string;
 
-    @Column({ type: 'decimal', precision: 10, scale: 2 })
+    @Column({ type: 'decimal', precision: 7, scale: 2 })
     valorTotal: number;
 
     @ManyToMany(() => Servico, {onUpdate: 'CASCADE', onDelete: 'CASCADE'})

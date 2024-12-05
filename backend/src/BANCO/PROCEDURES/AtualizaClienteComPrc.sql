@@ -30,5 +30,6 @@ create procedure AtualizaCliente(
 
 delimiter ;
 
+--teste!!!
 call AtualizaCliente(5, 'jose', null, null, null, null, null, null, null )
 

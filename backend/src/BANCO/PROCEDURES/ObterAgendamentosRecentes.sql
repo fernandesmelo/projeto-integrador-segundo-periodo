@@ -29,4 +29,5 @@ end $$
 
 delimiter ;
 
+-- teste!!!
 call ObterAgendamentosRecentes();

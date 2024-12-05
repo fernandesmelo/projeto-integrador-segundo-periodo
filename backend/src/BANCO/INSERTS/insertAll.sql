@@ -1,5 +1,53 @@
 use salaosenac;
 
+insert into categoria (nome)
+	values
+     ('Cabelereiro'),
+     ('Manicure e Pedicure'),
+     ('Estetica'),
+     ('Depilacao');
+     
+INSERT INTO funcionario (nome, cpf, sexo, email) VALUES
+('Alice Souza', '123.456.789-01', 'Feminino', 'alice.souza@email.com'),
+('Carlos Oliveira', '234.567.890-12', 'Masculino', 'carlos.oliveira@email.com'),
+('Mariana Lima', '345.678.901-23', 'Feminino', 'mariana.lima@email.com'),
+('Pedro Santos', '456.789.012-34', 'Masculino', 'pedro.santos@email.com'),
+('Fernanda Costa', '567.890.123-45', 'Feminino', 'fernanda.costa@email.com');
+
+	
+
+insert into funcionario_categorias_categoria 
+	values 
+		(1, 1),
+		(2, 2),
+		(3, 3),
+		(4, 3),
+		(5, 2);
+        
+INSERT INTO servico (nome, valor, categoria_idcategoria) 
+VALUES 
+	('Corte masculino', 65.00, 1),
+	('Corte feminino',45.00, 1),
+	('Luzes', 200.00, 1),
+	('Escova', 40.00, 1),
+	('Barba/Designer de barba', 40.00, 1),
+	('Manicure',23.00, 2),
+	('Esmaltação',  50.00, 2),
+	('Francesinha/Inglesinha', 15.00, 2),
+	('Pedicure + Manicure', 45.00, 2),
+	('Pedicure', 23.0, 2),
+	('Drenagem Linfática Corporal Manual',  65.00, 3),
+	('Limpeza de Pele', 85.00, 3),
+	('Reflexologia Podal', 85.00, 3),
+	('Revitalização Facial', 85.00, 3),
+	('Ventosaterapia',  50.00, 3),
+	('Depilação Feminina - 1/2 Pernas', 30.00, 4),
+	('Axilas', 24.00, 4),
+	('Virilha Simples', 28.00, 4),
+	('Pernas Completas',55.00, 4),
+	('Coxas', 40.00, 4);
+    
+
 INSERT INTO cliente (nome, data_nasc, cpf, email, sexo, telefone, senha, matricula) VALUES
 ('João Silva', '1995-05-20', '123.456.789-01', 'joao.silva@gmail.com', 'Masculino', '(11) 98765-4321', 'senha123', 'MAT001'),
 ('Maria Oliveira', '1990-03-15', '234.567.890-12', 'maria.oliveira@hotmail.com', 'Feminino', '(21) 99876-5432', 'senha123', 'MAT002'),
@@ -21,3 +69,8 @@ INSERT INTO cliente (nome, data_nasc, cpf, email, sexo, telefone, senha, matricu
 ('Patrícia Oliveira', '2001-12-01', '888.999.000-11', 'patricia.oliveira@outlook.com', 'Feminino', '(91) 99890-1234', 'senha123', 'MAT018'),
 ('Leonardo Batista', '1996-06-22', '999.000.111-22', 'leonardo.batista@gmail.com', 'Masculino', '(11) 99901-2345', 'senha123', 'MAT019'),
 ('Camila Ferreira', '1994-09-17', '000.111.222-33', 'camila.ferreira@hotmail.com', 'Feminino', '(21) 99123-4567', 'senha123', 'MAT020');
+
+    
+
+    
+    

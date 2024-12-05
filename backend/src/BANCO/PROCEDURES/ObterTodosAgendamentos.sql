@@ -22,7 +22,7 @@ begin
     left join agendamento_servicos_servico ass on a.idAgendamento = ass.agendamentoIdAgendamento
     left join servico s on ass.servicoIdServico = s.idServico
     group by a.idAgendamento
-    order by a.data, a.horario
+    order by a.data, a.horario;
 end$$
 
 delimiter ;

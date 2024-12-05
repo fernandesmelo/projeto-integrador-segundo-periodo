@@ -13,5 +13,5 @@ create procedure ObterFuncionariosEspecialidades()
     end$$
 delimiter ;
 
-
+-- teste!!!
 call ObterFuncionariosEspecialidades();

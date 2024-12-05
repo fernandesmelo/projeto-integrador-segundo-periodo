@@ -28,4 +28,5 @@ end $$
 
 delimiter ;
 
+-- teste!!
 call ObterAgendamentosPorData('2024-12-01');
