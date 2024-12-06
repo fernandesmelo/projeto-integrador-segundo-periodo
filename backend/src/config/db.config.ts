@@ -1,8 +1,8 @@
 export const config = {
     HOST: "localhost",
     PORT: 3306,
-    USER: "root",
-    PASSWORD: "root",
+    USER: "seuuser",
+    PASSWORD: "suasenha",
     DB: "salaosenac",
     pool: {
         max: 5,
