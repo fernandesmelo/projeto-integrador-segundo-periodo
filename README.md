@@ -1,5 +1,11 @@
-# Sistema de Agendamento para o Salão Empresa Pedagógica - Senac Pernambuco
+# Sistema de Agendamento - Salão Empresa Pedagógica - Senac Pernambuco
+No segundo período da minha graduação em Análise e Desenvolvimento de Sistemas pelo Faculdade Senac PE, tive a oportunidade de trabalhar em um dos melhores projetos da minha vida acadêmica: o desenvolvimento de um sistema completo de agendamento para salão de beleza. O projeto incluiu desde a criação do front-end até o back-end e o banco de dados, com todas as funcionalidades essenciais para esse tipo de software funcionando perfeitamente. Foi uma experiência extremamente enriquecedora!
 
+❓**Problema identificado:**
+O Salão Empresa Pedagógica - Senac Pernambuco enfrenta dificuldades na organização de agendamentos, que são feitos manualmente em papéis. Isso causa perda de tempo, erros de marcação e sobrecarga de trabalho, além de prejudicar o controle de horários e clientes.
+
+💡**Solução desenvolvida:**
+O objetivo era implementar um software que facilite o agendamento no salão de beleza, otimizando a organização dos horários, reduzindo erros manuais, melhorando o atendimento ao cliente e proporcionando uma visão clara da agenda para uma gestão mais eficiente.
 
 ## 🚀 Guia de Como Baixar e Rodar o Projeto
 
