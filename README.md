@@ -7,6 +7,30 @@ O Salão Empresa Pedagógica - Senac Pernambuco enfrenta dificuldades na organiz
 💡**Solução desenvolvida:**
 O objetivo era implementar um software que facilite o agendamento no salão de beleza, otimizando a organização dos horários, reduzindo erros manuais, melhorando o atendimento ao cliente e proporcionando uma visão clara da agenda para uma gestão mais eficiente.
 
+## ⚙️ Executando os Testes
+Próximos passos...
+
+## 🛠️ Construído com
+
+<div style="display: inline-block"><br/>
+  <img align="center" alt="html5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> 
+  <img align="center" alt="html5" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img align="center" alt="html5" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
+  <img align="center" alt="html5" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img align="center" alt="html5" src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
+  <img align="center" alt="html5" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img align="center" width="100px" height="30px" alt="html5" src="https://github.com/user-attachments/assets/b8f39f41-690d-4d8d-b546-d9e98187929d" />
+</div><br/>
+
+## 👨🏽‍💻 Versão das Tecnologias
+
+* HTML5
+* CSS3
+
+## ✒️ Autor
+
+* **Laércio Fernandes** - [LinkedIn](https://www.linkedin.com/in/laercio-fernandes/)
+
 ## 🚀 Guia de Como Baixar e Rodar o Projeto
 
 Este guia fornece instruções detalhadas para baixar, configurar e executar um projeto full-stack, com front-end feito em HTML, CSS, Bootstrap e JavaScript, e back-end desenvolvido com TypeScript, Node.js, TypeORM, Express e banco de dados MySQL.
