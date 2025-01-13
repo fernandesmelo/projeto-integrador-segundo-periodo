@@ -1,4 +1,4 @@
-# Sistema de Agendamentos para o Salão Empresa Pedagógica - Senac Pernambuco
+# Sistema de Agendamento para o Salão Empresa Pedagógica - Senac Pernambuco
 
 
 ## 🚀 Guia de Como Baixar e Rodar o Projeto
