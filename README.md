@@ -7,6 +7,11 @@ O Salão Empresa Pedagógica - Senac Pernambuco enfrenta dificuldades na organiz
 💡**Solução desenvolvida:**
 O objetivo era implementar um software que facilite o agendamento no salão de beleza, otimizando a organização dos horários, reduzindo erros manuais, melhorando o atendimento ao cliente e proporcionando uma visão clara da agenda para uma gestão mais eficiente.
 
+## 📂 Outros Arquivos 
+
+[Documento do Software- Salão de Beleza Escola do SENAC PE .pdf](https://github.com/user-attachments/files/18417216/Documento.do.Software-.Salao.de.Beleza.Escola.do.SENAC.PE.pdf)
+[Artigo - SALÃO SENAC desafios para a construção de um softwa.pdf](https://github.com/user-attachments/files/18417223/Artigo.-.SALAO.SENAC.desafios.para.a.construcao.de.um.softwa.pdf)
+
 ## ⚙️ Executando os Testes
 Próximos passos...
 
