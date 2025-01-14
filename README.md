@@ -10,10 +10,8 @@ O objetivo era implementar um software que facilite o agendamento no salão de b
 ## 📂 Outros Arquivos 
 
 [Documento do Software- Salão de Beleza Escola do SENAC PE .pdf](https://github.com/user-attachments/files/18417216/Documento.do.Software-.Salao.de.Beleza.Escola.do.SENAC.PE.pdf)
+<br>
 [Artigo - SALÃO SENAC desafios para a construção de um softwa.pdf](https://github.com/user-attachments/files/18417223/Artigo.-.SALAO.SENAC.desafios.para.a.construcao.de.um.softwa.pdf)
-
-## ⚙️ Executando os Testes
-Próximos passos...
 
 ## 🛠️ Construído com
 
@@ -157,4 +155,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas no s
 ---
 
 Agora você está pronto para explorar, testar e personalizar este projeto! 🎉
+
+## ⚙️ Executando os Testes
+Próximos passos...
 ```
