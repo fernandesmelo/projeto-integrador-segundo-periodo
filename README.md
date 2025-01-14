@@ -28,6 +28,13 @@ Próximos passos...
 
 * HTML5
 * CSS3
+* Bootstrap 4.5.2
+* JavaScript ECMAScript 6 (ES6)
+* Node.js 22.12.0
+* TypeScript 5.3.3
+* TypeORM 0.3.20
+* Express.js 4.21.0
+* MySQL 3.11.3
 
 ## ✒️ Autores
 
