@@ -29,18 +29,9 @@ Próximos passos...
 
 ## ✒️ Autores
 
-
-
-
-
-
-
-
-
-| <img src="https://github.com/fernandesmelo/carona-solidaria/assets/113717317/1d3daac1-3d6a-40d6-b755-09d583ce392f" width="100" height="100" /> | <img src="https://github.com/user-attachments/assets/fa917b45-5cf7-4198-a42d-35340e41dacb" width="100" height="100" /> | <img src="https://github.com/user-attachments/assets/38bbd5a0-edc1-411a-aa45-7f15a384f9be" width="100" height="100" /> | <img src="https://github.com/fernandesmelo/carona-solidaria/assets/113717317/8762e53c-5140-498f-97f2-b6c73e116ba6" width="100" height="100" /> | <img src="https://github.com/fernandesmelo/carona-solidaria/assets/113717317/497e99c1-b743-4051-a30a-63e05c59bfc1" width="100" height="100" /> | <img src="https://github.com/fernandesmelo/carona-solidaria/assets/113717317/7620caa8-9b30-4b87-9b15-69f9641fa0f2" width="100" height="100" /> | <img src="https://github.com/fernandesmelo/carona-solidaria/assets/113717317/65981f78-f2d0-47bc-92db-44e0d8d1af9b" width="100" height="100" /> |
-|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|
-| [Laércio Fernandes](https://www.linkedin.com/in/laercio-fernandes/) | [Natália Santos](https://www.linkedin.com/in/natalia-bento-364b2b235/) | [Nathaly Silva](https://www.linkedin.com/in/nathalyoliveira10/) | [Monique Ferreira](https://www.linkedin.com/in/monique-ferreira-42b2121b7/) | [Cláudio Felipe](https://www.linkedin.com/in/claudio-felipe-5b7b39116/) | [Tácia Camila](https://www.linkedin.com/in/t%C3%A1ciacamila/) | [Raíssa Santos](https://www.linkedin.com/in/raissasantos96/) |
-
+| <img src="https://github.com/fernandesmelo/carona-solidaria/assets/113717317/1d3daac1-3d6a-40d6-b755-09d583ce392f" width="100" height="100" /> | <img src="https://github.com/user-attachments/assets/fa917b45-5cf7-4198-a42d-35340e41dacb" width="100" height="100" /> | <img src="https://github.com/user-attachments/assets/38bbd5a0-edc1-411a-aa45-7f15a384f9be" width="100" height="100" /> | <img src="https://github.com/user-attachments/assets/b5e40e9f-f5bb-4720-90a0-198ae903ae0b" width="100" height="100" /> | <img src="https://github.com/user-attachments/assets/166ff03a-eec7-45d4-b485-6cf55c264973" height="100" /> | <img src="https://github.com/user-attachments/assets/db9cc241-da0f-4df7-8f17-5a6baebdccab" width="100" height="100" /> |
+|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|
+| [Laércio Fernandes](https://www.linkedin.com/in/laercio-fernandes/) | [Natália Santos](https://www.linkedin.com/in/natalia-bento-364b2b235/) | [Nathaly Silva](https://www.linkedin.com/in/nathalyoliveira10/) | [Nayara Peixoto](https://www.linkedin.com/in/nayara-peixoto-64525b23b/) | [Juliana Reis](https://www.linkedin.com/in/juliana-reis-a9394b305/) | [Matheus Bezerra](https://www.linkedin.com/in/matheus-bzrr/) | 
 ## 🚀 Guia de Como Baixar e Rodar o Projeto
 
 Este guia fornece instruções detalhadas para baixar, configurar e executar um projeto full-stack, com front-end feito em HTML, CSS, Bootstrap e JavaScript, e back-end desenvolvido com TypeScript, Node.js, TypeORM, Express e banco de dados MySQL.
