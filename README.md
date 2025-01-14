@@ -158,4 +158,3 @@ Agora você está pronto para explorar, testar e personalizar este projeto! 🎉
 
 ## ⚙️ Executando os Testes
 Próximos passos...
-```
