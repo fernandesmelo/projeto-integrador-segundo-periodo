@@ -39,9 +39,9 @@ O objetivo era implementar um software que facilite o agendamento no salão de b
 * Express.js 4.21.0
 * MySQL 3.11.3
 
-## ✅ Tomadas de decisões
+## ✅ Tomadas de Decisões
 * Usamos o **Bootstrap** porque facilita a criação de sites responsivos e com design profissional. Ele economiza tempo de desenvolvimento, garante compatibilidade com diferentes navegadores e permite personalização para atender às necessidades específicas do projeto.
-* Express foi usado porque é uma biblioteca leve e flexível para criar APIs no back-end, fornecendo uma estrutura organizada para gerenciar rotas, middlewares e requisições de forma rápida e eficiente.
+* **Express** foi usado porque é uma biblioteca leve e flexível para criar APIs no back-end, fornecendo uma estrutura organizada para gerenciar rotas, middlewares e requisições de forma rápida e eficiente.
 * E o **TypeORM** foi usado no back-end para facilitar o trabalho com bancos de dados, pois permite mapear tabelas e relacionamentos diretamente no código usando classes e objetos (ORM), reduzindo a complexidade de escrever consultas SQL manualmente.
 
 ## ✒️ Autores
